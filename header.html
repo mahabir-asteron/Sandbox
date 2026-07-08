@@ -1,1512 +1,783 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- =================================
+     ABC BIN RENTAL HEADER
+================================= -->
 
-<head>
+<style>
 
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="ABC Bin Rental provides reliable bin rental, cleaning and junk removal services in Edmonton, Alberta."
-    >
-
-    <title>
-        ABC Bin Rental | Bin Rental & Cleaning Services Edmonton
-    </title>
+    :root {
+        --header-green: #174f3b;
+        --header-dark: #0d3427;
+        --header-lime: #d9f24f;
+        --header-white: #ffffff;
+    }
 
 
-    <style>
+    .site-header {
+        width: 100%;
+        height: 84px;
+        background: var(--header-white);
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 9999;
+        border-bottom: 1px solid rgba(23, 79, 59, 0.10);
+    }
 
-        :root {
 
-            --green: #174f3b;
-            --dark-green: #0d3427;
-            --lime: #d9f24f;
-            --cream: #f6f4ea;
-            --dark: #17241f;
-            --gray: #65716b;
-            --white: #ffffff;
+    .header-container {
+        width: 100%;
+        max-width: 1500px;
+        margin: auto;
+        padding: 0 7.5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 35px;
+    }
 
+
+    /* =================================
+       LOGO
+    ================================= */
+
+
+    .site-logo {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        text-decoration: none;
+        color: var(--header-dark);
+        flex-shrink: 0;
+    }
+
+
+    .logo-icon {
+        width: 47px;
+        height: 47px;
+        background: var(--header-green);
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    .logo-icon::before {
+        content: "";
+        width: 20px;
+        height: 17px;
+        border: 3px solid var(--header-lime);
+        border-top: 0;
+        transform: skew(-5deg);
+    }
+
+
+    .logo-icon::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 3px;
+        background: var(--header-lime);
+        top: 13px;
+        left: 11px;
+    }
+
+
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .logo-text strong {
+        font-size: 20px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: -0.7px;
+    }
+
+
+    .logo-text span {
+        margin-top: 5px;
+        color: #65716b;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 1.6px;
+    }
+
+
+    /* =================================
+       NAVIGATION
+    ================================= */
+
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+    }
+
+
+    .main-nav > a,
+    .dropdown-button {
+        color: var(--header-dark);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        position: relative;
+        transition: 0.2s;
+    }
+
+
+    .main-nav > a::after,
+    .dropdown-button::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -9px;
+        width: 0;
+        height: 2px;
+        background: var(--header-green);
+        transition: width 0.2s;
+    }
+
+
+    .main-nav > a:hover,
+    .dropdown-button:hover {
+        color: var(--header-green);
+    }
+
+
+    .main-nav > a:hover::after,
+    .dropdown:hover .dropdown-button::after {
+        width: 100%;
+    }
+
+
+    /* =================================
+       DROPDOWN
+    ================================= */
+
+
+    .dropdown {
+        position: relative;
+    }
+
+
+    .dropdown-button {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        cursor: pointer;
+        padding: 30px 0;
+    }
+
+
+    .dropdown-arrow {
+        font-size: 10px;
+        transition: transform 0.2s;
+    }
+
+
+    .dropdown:hover .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+
+    .dropdown-menu {
+        position: absolute;
+        top: 72px;
+        left: -25px;
+        width: 235px;
+        background: var(--header-white);
+        padding: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition: 0.22s;
+        box-shadow: 0 18px 45px rgba(13, 52, 39, 0.15);
+        border-top: 3px solid var(--header-lime);
+    }
+
+
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+
+    .dropdown-menu a {
+        display: block;
+        padding: 14px 15px;
+        color: var(--header-dark);
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 800;
+        transition: 0.2s;
+    }
+
+
+    .dropdown-menu a:hover {
+        background: #edf4d0;
+        color: var(--header-green);
+        padding-left: 20px;
+    }
+
+
+    /* =================================
+       HEADER CTA
+    ================================= */
+
+
+    .header-cta {
+        display: inline-block;
+        background: var(--header-green);
+        color: var(--header-white) !important;
+        padding: 16px 23px;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        transition: 0.2s;
+        flex-shrink: 0;
+    }
+
+
+    .header-cta:hover {
+        background: var(--header-dark);
+        transform: translateY(-2px);
+    }
+
+
+    /* =================================
+       MOBILE MENU BUTTON
+    ================================= */
+
+
+    .menu-toggle {
+        width: 48px;
+        height: 48px;
+        border: 0;
+        background: var(--header-green);
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0;
+    }
+
+
+    .menu-toggle span {
+        width: 21px;
+        height: 2px;
+        background: var(--header-lime);
+        transition: 0.25s;
+    }
+
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+
+    /* =================================
+       TABLET / MOBILE
+    ================================= */
+
+
+    @media (max-width: 1050px) {
+
+        .header-container {
+            padding: 0 6%;
         }
 
 
-        * {
-
-            box-sizing: border-box;
-
-        }
-
-
-        html {
-
-            scroll-behavior: smooth;
-
-        }
-
-
-        body {
-
-            margin: 0;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            color: var(--dark);
-
-            background: var(--cream);
-
-        }
-
-
-        a {
-
-            text-decoration: none;
-
-            color: inherit;
-
-        }
-
-
-        /* ==============================
-           HEADER
-        ============================== */
-
-
-        #header {
-
-            min-height: 84px;
-
-        }
-
-
-        /* ==============================
-           HERO
-        ============================== */
-
-
-        .hero {
-
-            min-height: 680px;
-
+        .menu-toggle {
             display: flex;
-
-            align-items: center;
-
-            padding: 80px 7.5%;
-
-            color: var(--white);
-
-            position: relative;
-
-            overflow: hidden;
-
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    rgba(11, 45, 34, 0.96) 0%,
-                    rgba(18, 61, 46, 0.91) 48%,
-                    rgba(18, 61, 46, 0.45) 100%
-                ),
-
-                url(
-                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1900&q=85"
-                );
-
-
-            background-position: center;
-
-            background-size: cover;
-
         }
 
 
-        .hero::after {
+        .header-cta {
+            display: none;
+        }
 
-            content: "";
 
+        .main-nav {
             position: absolute;
-
-            width: 430px;
-
-            height: 430px;
-
-            border:
-
-                1px solid
-                rgba(255, 255, 255, 0.11);
-
-            border-radius: 50%;
-
-            right: -110px;
-
-            bottom: -150px;
-
-
-            box-shadow:
-
-                0 0 0 70px
-                rgba(255, 255, 255, 0.03),
-
-                0 0 0 140px
-                rgba(255, 255, 255, 0.02);
-
+            top: 84px;
+            left: 0;
+            width: 100%;
+            background: var(--header-white);
+            display: none;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            padding: 15px 6% 30px;
+            box-shadow: 0 20px 40px rgba(13, 52, 39, 0.12);
+            border-top: 1px solid rgba(23, 79, 59, 0.08);
         }
 
 
-        .hero-content {
-
-            max-width: 790px;
-
-            position: relative;
-
-            z-index: 2;
-
-        }
-
-
-        .eyebrow {
-
+        .main-nav.open {
             display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-
-            font-size: 12px;
-
-            font-weight: 900;
-
-            letter-spacing: 2.2px;
-
-            color: var(--lime);
-
-            margin-bottom: 22px;
-
         }
 
 
-        .eyebrow::before {
-
-            content: "";
-
-            width: 35px;
-
-            height: 2px;
-
-            background: currentColor;
-
+        .main-nav > a {
+            padding: 17px 0;
+            border-bottom: 1px solid #e4e8e3;
         }
 
 
-        h1 {
-
-            font-size:
-
-                clamp(
-                    52px,
-                    7vw,
-                    91px
-                );
-
-            line-height: 0.93;
-
-            letter-spacing: -5px;
-
-            margin:
-
-                0
-                0
-                28px;
-
-            max-width: 850px;
-
+        .main-nav > a::after,
+        .dropdown-button::after {
+            display: none;
         }
 
 
-        .hero p {
-
-            font-size: 19px;
-
-            line-height: 1.75;
-
-            color: #e2ece7;
-
-            max-width: 650px;
-
-            margin:
-
-                0
-                0
-                36px;
-
+        .dropdown {
+            width: 100%;
+            border-bottom: 1px solid #e4e8e3;
         }
 
 
-        .hero-actions {
-
-            display: flex;
-
-            gap: 14px;
-
-            flex-wrap: wrap;
-
+        .dropdown-button {
+            width: 100%;
+            justify-content: space-between;
+            padding: 17px 0;
         }
 
 
-        .btn-primary {
-
-            display: inline-block;
-
-            background: var(--lime);
-
-            color: var(--dark);
-
-            padding:
-
-                17px
-                25px;
-
-            font-size: 13px;
-
-            font-weight: 900;
-
-            border-radius: 3px;
-
+        .dropdown-menu {
+            position: static;
+            width: 100%;
+            display: none;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            border-top: 0;
+            padding: 0 0 12px 15px;
         }
 
 
-        .btn-outline {
-
-            display: inline-block;
-
-            border:
-
-                1px solid
-                rgba(255, 255, 255, 0.5);
-
-            color: var(--white);
-
-            padding:
-
-                17px
-                25px;
-
-            font-size: 13px;
-
-            font-weight: 900;
-
-            border-radius: 3px;
-
-        }
-
-
-        .hero-info {
-
-            position: absolute;
-
-            z-index: 3;
-
-            right: 6%;
-
-            bottom: 0;
-
-            background: var(--lime);
-
-            color: var(--dark);
-
-            display: flex;
-
-        }
-
-
-        .info-box {
-
-            padding:
-
-                22px
-                30px;
-
-            border-right:
-
-                1px solid
-                rgba(20, 37, 31, 0.15);
-
-        }
-
-
-        .info-box small {
-
+        .dropdown.mobile-open .dropdown-menu {
             display: block;
-
-            font-size: 10px;
-
-            font-weight: 900;
-
-            letter-spacing: 1.5px;
-
-            margin-bottom: 7px;
-
         }
 
 
-        .info-box strong {
-
-            font-size: 16px;
-
+        .dropdown.mobile-open .dropdown-arrow {
+            transform: rotate(180deg);
         }
 
 
-        /* ==============================
-           SERVICES
-        ============================== */
+        .dropdown-menu a {
+            padding: 13px 15px;
+            background: #f7f8f3;
+            margin-bottom: 2px;
+        }
+
+    }
 
 
-        .section {
+    @media (max-width: 500px) {
 
-            padding: 105px 7.5%;
-
-            max-width: 1500px;
-
-            margin: auto;
-
+        .site-header {
+            height: 76px;
         }
 
 
-        .section-head {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-end;
-
-            gap: 40px;
-
-            margin-bottom: 50px;
-
+        .main-nav {
+            top: 76px;
         }
 
 
-        .section .eyebrow {
-
-            color: var(--green);
-
+        .header-container {
+            padding: 0 5%;
         }
 
 
-        h2 {
-
-            font-size:
-
-                clamp(
-                    40px,
-                    5vw,
-                    64px
-                );
-
-            line-height: 1.02;
-
-            letter-spacing: -3px;
-
-            margin: 0;
-
-            max-width: 790px;
-
+        .logo-icon {
+            width: 43px;
+            height: 43px;
         }
 
 
-        .section-head p {
-
-            max-width: 430px;
-
-            color: var(--gray);
-
-            line-height: 1.8;
-
-            margin: 0;
-
+        .logo-text strong {
+            font-size: 17px;
         }
 
 
-        .services {
-
-            display: grid;
-
-            grid-template-columns:
-
-                repeat(
-                    3,
-                    1fr
-                );
-
-            gap: 22px;
-
+        .logo-text span {
+            font-size: 8px;
+            letter-spacing: 1.2px;
         }
 
 
-        .service-card {
-
-            background: var(--white);
-
-            padding: 38px;
-
-            min-height: 345px;
-
-            border-bottom:
-
-                4px solid
-                transparent;
-
-            transition: 0.25s;
-
+        .menu-toggle {
+            width: 44px;
+            height: 44px;
         }
 
+    }
 
-        .service-card:hover {
+</style>
 
-            transform:
 
-                translateY(
-                    -7px
-                );
+<header class="site-header">
 
-            border-color: var(--lime);
 
-            box-shadow:
+    <div class="header-container">
 
-                0 18px 40px
-                rgba(20, 51, 39, 0.09);
 
-        }
+        <!-- LOGO -->
 
 
-        .service-number {
+        <a
+            href="index.html"
+            class="site-logo"
+            aria-label="ABC Bin Rental Home"
+        >
 
-            font-size: 12px;
 
-            font-weight: 900;
+            <div class="logo-icon"></div>
 
-            color: #8b9690;
 
-        }
+            <div class="logo-text">
 
+                <strong>
+                    ABC BIN RENTAL
+                </strong>
 
-        .service-icon {
-
-            width: 62px;
-
-            height: 62px;
-
-            border-radius: 50%;
-
-            display: grid;
-
-            place-items: center;
-
-            background: #edf4d0;
-
-            color: var(--green);
-
-            font-size: 28px;
-
-            margin:
-
-                28px
-                0;
-
-        }
-
-
-        .service-card h3 {
-
-            font-size: 27px;
-
-            margin:
-
-                0
-                0
-                15px;
-
-        }
-
-
-        .service-card p {
-
-            color: var(--gray);
-
-            line-height: 1.75;
-
-        }
-
-
-        .text-link {
-
-            display: inline-block;
-
-            margin-top: 22px;
-
-            color: var(--green);
-
-            font-size: 13px;
-
-            font-weight: 900;
-
-        }
-
-
-        /* ==============================
-           PROCESS
-        ============================== */
-
-
-        .process {
-
-            background: var(--green);
-
-            color: var(--white);
-
-            padding: 100px 7.5%;
-
-        }
-
-
-        .process-inner {
-
-            max-width: 1500px;
-
-            margin: auto;
-
-        }
-
-
-        .process .eyebrow {
-
-            color: var(--lime);
-
-        }
-
-
-        .process h2 {
-
-            max-width: 700px;
-
-        }
-
-
-        .steps {
-
-            display: grid;
-
-            grid-template-columns:
-
-                repeat(
-                    3,
-                    1fr
-                );
-
-            gap: 1px;
-
-            background:
-
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.15
-                );
-
-            margin-top: 55px;
-
-        }
-
-
-        .step {
-
-            background: var(--green);
-
-            padding: 42px;
-
-        }
-
-
-        .step span {
-
-            font-size: 52px;
-
-            font-weight: 900;
-
-            color: var(--lime);
-
-        }
-
-
-        .step h3 {
-
-            font-size: 23px;
-
-        }
-
-
-        .step p {
-
-            color: #cfddd7;
-
-            line-height: 1.7;
-
-        }
-
-
-        /* ==============================
-           CTA
-        ============================== */
-
-
-        .cta {
-
-            background: var(--lime);
-
-            padding: 70px 7.5%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 35px;
-
-        }
-
-
-        .cta h2 {
-
-            max-width: 760px;
-
-        }
-
-
-        .dark-btn {
-
-            display: inline-block;
-
-            background: var(--dark-green);
-
-            color: var(--white);
-
-            padding:
-
-                18px
-                28px;
-
-            font-size: 13px;
-
-            font-weight: 900;
-
-            white-space: nowrap;
-
-        }
-
-
-        /* ==============================
-           FOOTER
-        ============================== */
-
-
-        #footer {
-
-            min-height: 200px;
-
-        }
-
-
-        /* ==============================
-           RESPONSIVE
-        ============================== */
-
-
-        @media (max-width: 950px) {
-
-
-            .hero {
-
-                min-height: 650px;
-
-            }
-
-
-            .hero-info {
-
-                display: none;
-
-            }
-
-
-            .section-head {
-
-                align-items: flex-start;
-
-                flex-direction: column;
-
-            }
-
-
-            .services,
-
-            .steps {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .cta {
-
-                align-items: flex-start;
-
-                flex-direction: column;
-
-            }
-
-
-            h1 {
-
-                letter-spacing: -3px;
-
-            }
-
-        }
-
-
-        @media (max-width: 560px) {
-
-
-            .hero {
-
-                padding:
-
-                    70px
-                    6%;
-
-                min-height: 610px;
-
-            }
-
-
-            h1 {
-
-                font-size: 50px;
-
-            }
-
-
-            .section,
-
-            .process {
-
-                padding:
-
-                    75px
-                    6%;
-
-            }
-
-
-            .service-card {
-
-                padding: 30px;
-
-            }
-
-
-            .cta {
-
-                padding:
-
-                    55px
-                    6%;
-
-            }
-
-        }
-
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-    <!-- ==============================
-         HEADER
-    ============================== -->
-
-
-    <div id="header"></div>
-
-
-
-
-    <main>
-
-
-        <!-- ==============================
-             HERO
-        ============================== -->
-
-
-        <section class="hero">
-
-
-            <div class="hero-content">
-
-
-                <div class="eyebrow">
-
-                    EDMONTON BIN RENTAL & CLEANING
-
-                </div>
-
-
-                <h1>
-
-                    MORE SPACE.<br>
-
-                    LESS MESS.
-
-                </h1>
-
-
-                <p>
-
-                    Reliable bin rental, cleaning and
-                    junk removal services for homeowners,
-                    contractors and businesses across
-                    Edmonton.
-
-                </p>
-
-
-                <div class="hero-actions">
-
-
-                    <a
-                        class="btn-primary"
-                        href="contact.html"
-                    >
-
-                        GET A FREE QUOTE
-
-                    </a>
-
-
-                    <a
-                        class="btn-outline"
-                        href="service.html"
-                    >
-
-                        VIEW OUR SERVICES
-
-                    </a>
-
-
-                </div>
-
+                <span>
+                    EDMONTON · ALBERTA
+                </span>
 
             </div>
 
 
+        </a>
 
 
-            <div class="hero-info">
 
+        <!-- NAVIGATION -->
 
-                <div class="info-box">
 
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
 
-                    <small>
 
-                        CALL US
-
-                    </small>
-
-
-                    <strong>
-
-                        0000000000
-
-                    </strong>
-
-
-                </div>
-
-
-
-
-                <div class="info-box">
-
-
-                    <small>
-
-                        SERVICE AREA
-
-                    </small>
-
-
-                    <strong>
-
-                        Edmonton, Alberta
-
-                    </strong>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-
-        <!-- ==============================
-             SERVICES
-        ============================== -->
-
-
-        <section class="section">
-
-
-            <div class="section-head">
-
-
-                <div>
-
-
-                    <div class="eyebrow">
-
-                        WHAT WE DO
-
-                    </div>
-
-
-                    <h2>
-
-                        CLEANUP SOLUTIONS
-                        THAT KEEP YOU MOVING.
-
-                    </h2>
-
-
-                </div>
-
-
-
-
-                <p>
-
-                    From renovation debris to property
-                    cleanouts, ABC Bin Rental makes
-                    waste removal simple with dependable
-                    service and straightforward solutions.
-
-                </p>
-
-
-            </div>
-
-
-
-
-            <div class="services">
-
-
-
-
-                <!-- BIN RENTAL -->
-
-
-                <article class="service-card">
-
-
-                    <span class="service-number">
-
-                        01
-
-                    </span>
-
-
-                    <div class="service-icon">
-
-                        ▣
-
-                    </div>
-
-
-                    <h3>
-
-                        Bin Rental
-
-                    </h3>
-
-
-                    <p>
-
-                        Convenient bin rental solutions
-                        for home cleanouts, renovation
-                        debris and construction projects
-                        in Edmonton.
-
-                    </p>
-
-
-                    <a
-                        class="text-link"
-                        href="service-one.html"
-                    >
-
-                        EXPLORE SERVICE →
-
-                    </a>
-
-
-                </article>
-
-
-
-
-                <!-- CLEANING -->
-
-
-                <article class="service-card">
-
-
-                    <span class="service-number">
-
-                        02
-
-                    </span>
-
-
-                    <div class="service-icon">
-
-                        ✦
-
-                    </div>
-
-
-                    <h3>
-
-                        Cleaning Services
-
-                    </h3>
-
-
-                    <p>
-
-                        Professional cleaning support
-                        to help leave homes, properties
-                        and project areas cleaner and
-                        ready for what comes next.
-
-                    </p>
-
-
-                    <a
-                        class="text-link"
-                        href="service-two.html"
-                    >
-
-                        EXPLORE SERVICE →
-
-                    </a>
-
-
-                </article>
-
-
-
-
-                <!-- JUNK REMOVAL -->
-
-
-                <article class="service-card">
-
-
-                    <span class="service-number">
-
-                        03
-
-                    </span>
-
-
-                    <div class="service-icon">
-
-                        ↗
-
-                    </div>
-
-
-                    <h3>
-
-                        Junk Removal
-
-                    </h3>
-
-
-                    <p>
-
-                        Clear unwanted items and clutter
-                        without the stress. Our team
-                        helps make your cleanup faster
-                        and more manageable.
-
-                    </p>
-
-
-                    <a
-                        class="text-link"
-                        href="service-three.html"
-                    >
-
-                        EXPLORE SERVICE →
-
-                    </a>
-
-
-                </article>
-
-
-            </div>
-
-
-        </section>
-
-
-
-
-        <!-- ==============================
-             PROCESS
-        ============================== -->
-
-
-        <section class="process">
-
-
-            <div class="process-inner">
-
-
-                <div class="eyebrow">
-
-                    SIMPLE PROCESS
-
-                </div>
-
-
-                <h2>
-
-                    FROM MESS TO CLEAN
-                    IN THREE EASY STEPS.
-
-                </h2>
-
-
-
-
-                <div class="steps">
-
-
-
-
-                    <div class="step">
-
-
-                        <span>
-
-                            01
-
-                        </span>
-
-
-                        <h3>
-
-                            Tell Us About Your Project
-
-                        </h3>
-
-
-                        <p>
-
-                            Call or contact us with
-                            details about your cleanup,
-                            waste or rental needs.
-
-                        </p>
-
-
-                    </div>
-
-
-
-
-                    <div class="step">
-
-
-                        <span>
-
-                            02
-
-                        </span>
-
-
-                        <h3>
-
-                            Choose Your Service
-
-                        </h3>
-
-
-                        <p>
-
-                            We help you select a practical
-                            bin rental or cleaning solution
-                            for the job.
-
-                        </p>
-
-
-                    </div>
-
-
-
-
-                    <div class="step">
-
-
-                        <span>
-
-                            03
-
-                        </span>
-
-
-                        <h3>
-
-                            We Handle the Rest
-
-                        </h3>
-
-
-                        <p>
-
-                            Schedule your service and
-                            move forward with a cleaner,
-                            more organized space.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-
-        <!-- ==============================
-             CTA
-        ============================== -->
-
-
-        <section class="cta">
-
-
-            <h2>
-
-                READY TO CLEAR THE CLUTTER?
-
-            </h2>
-
-
-            <a
-                class="dark-btn"
-                href="contact.html"
-            >
-
-                REQUEST YOUR FREE QUOTE
-
+            <a href="index.html">
+                HOME
             </a>
 
 
-        </section>
-
-
-    </main>
-
-
-
-
-    <!-- ==============================
-         FOOTER
-    ============================== -->
-
-
-    <div id="footer"></div>
+            <a href="about.html">
+                ABOUT
+            </a>
 
 
 
-
-    <!-- ==============================
-         JAVASCRIPT
-    ============================== -->
+            <!-- SERVICES DROPDOWN -->
 
 
-    <script>
+            <div class="dropdown">
 
 
-        async function loadSection(id, file) {
+                <div
+                    class="dropdown-button"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Services menu"
+                >
+
+                    SERVICES
+
+                    <span class="dropdown-arrow">
+                        ▼
+                    </span>
+
+                </div>
 
 
-            try {
+                <div class="dropdown-menu">
 
 
-                const response =
-                    await fetch("./" + file);
+                    <a href="service.html">
+                        All Services
+                    </a>
 
 
-                if (!response.ok) {
+                    <a href="service-one.html">
+                        Bin Rental
+                    </a>
 
-                    throw new Error(
-                        "HTTP error: "
-                        + response.status
+
+                    <a href="service-two.html">
+                        Cleaning Services
+                    </a>
+
+
+                    <a href="service-three.html">
+                        Junk Removal
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- PROJECTS DROPDOWN -->
+
+
+            <div class="dropdown">
+
+
+                <div
+                    class="dropdown-button"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Projects menu"
+                >
+
+                    PROJECTS
+
+                    <span class="dropdown-arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div class="dropdown-menu">
+
+
+                    <a href="projects.html">
+                        All Projects
+                    </a>
+
+
+                    <a href="project-one.html">
+                        Project One
+                    </a>
+
+
+                    <a href="project-two.html">
+                        Project Two
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+            <a href="contact.html">
+                CONTACT US
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- HEADER CTA -->
+
+
+        <a
+            href="contact.html"
+            class="header-cta"
+        >
+
+            GET A FREE QUOTE
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </button>
+
+
+    </div>
+
+
+</header>
+
+
+<script>
+
+    (function () {
+
+        const menuButton =
+            document.querySelector(".menu-toggle");
+
+
+        const navigation =
+            document.querySelector(".main-nav");
+
+
+        const dropdowns =
+            document.querySelectorAll(".dropdown");
+
+
+        if (menuButton && navigation) {
+
+            menuButton.addEventListener(
+                "click",
+                function () {
+
+                    navigation.classList.toggle("open");
+
+                    menuButton.classList.toggle("active");
+
+
+                    const isOpen =
+                        navigation.classList.contains("open");
+
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        isOpen
+                    );
+
+                }
+            );
+
+        }
+
+
+        dropdowns.forEach(
+            function (dropdown) {
+
+                const button =
+                    dropdown.querySelector(
+                        ".dropdown-button"
+                    );
+
+
+                if (!button) {
+                    return;
+                }
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        if (
+                            window.innerWidth <= 1050
+                        ) {
+
+                            dropdown.classList.toggle(
+                                "mobile-open"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                button.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            dropdown.classList.toggle(
+                                "mobile-open"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (
+                    window.innerWidth > 1050
+                ) {
+
+                    navigation
+                        ?.classList
+                        .remove("open");
+
+
+                    menuButton
+                        ?.classList
+                        .remove("active");
+
+
+                    menuButton
+                        ?.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+
+                    dropdowns.forEach(
+                        function (dropdown) {
+
+                            dropdown.classList.remove(
+                                "mobile-open"
+                            );
+
+                        }
                     );
 
                 }
 
-
-                const content =
-                    await response.text();
-
-
-                document
-                    .getElementById(id)
-                    .innerHTML = content;
-
-
-
-
-                if (id === "header") {
-
-
-                    const button =
-
-                        document.querySelector(
-                            ".menu-toggle"
-                        );
-
-
-                    const nav =
-
-                        document.querySelector(
-                            ".main-nav"
-                        );
-
-
-                    if (button && nav) {
-
-
-                        button.addEventListener(
-
-                            "click",
-
-                            function () {
-
-                                nav.classList.toggle(
-                                    "open"
-                                );
-
-                            }
-
-                        );
-
-
-                    }
-
-
-                }
-
-
             }
-
-
-            catch (error) {
-
-
-                console.error(
-
-                    "Unable to load "
-                    + file,
-
-                    error
-
-                );
-
-
-            }
-
-
-        }
-
-
-
-
-        document.addEventListener(
-
-            "DOMContentLoaded",
-
-            function () {
-
-
-                loadSection(
-                    "header",
-                    "header.html"
-                );
-
-
-                loadSection(
-                    "footer",
-                    "footer.html"
-                );
-
-
-            }
-
         );
 
+    })();
 
-    </script>
-
-
-</body>
-
-</html>
+</script>
