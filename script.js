@@ -1,79 +1,96 @@
-async function loadPart(file, placeholderId) {
+document.addEventListener("DOMContentLoaded", async function () {
+
     try {
-        const response = await fetch(file);
 
-        if (!response.ok) {
-            throw new Error("Failed to load " + file);
+        const headerResponse = await fetch("./header.html?v=2");
+
+        const headerHTML = await headerResponse.text();
+
+        document.getElementById("header-placeholder").innerHTML =
+            headerHTML;
+
+
+        const footerResponse = await fetch("./footer.html?v=2");
+
+        const footerHTML = await footerResponse.text();
+
+        document.getElementById("footer-placeholder").innerHTML =
+            footerHTML;
+
+
+        const menuButton =
+            document.querySelector(".menu-toggle");
+
+        const navigation =
+            document.querySelector(".main-nav");
+
+
+        if (menuButton && navigation) {
+
+            menuButton.addEventListener("click", function () {
+
+                navigation.classList.toggle("open");
+
+                menuButton.classList.toggle("active");
+
+            });
+
         }
 
-        const html = await response.text();
-        const placeholder = document.getElementById(placeholderId);
 
-        if (placeholder) {
-            placeholder.innerHTML = html;
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
+        const dropdowns =
+            document.querySelectorAll(".dropdown");
 
 
-function initializeHeader() {
-    const menuButton = document.querySelector(".menu-toggle");
-    const navigation = document.querySelector(".main-nav");
-    const dropdowns = document.querySelectorAll(".dropdown");
+        dropdowns.forEach(function (dropdown) {
 
-    if (menuButton && navigation) {
-        menuButton.addEventListener("click", function () {
-            navigation.classList.toggle("open");
-            menuButton.classList.toggle("active");
+            const button =
+                dropdown.querySelector(".dropdown-button");
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                navigation.classList.contains("open")
-            );
-        });
-    }
 
-    dropdowns.forEach(function (dropdown) {
-        const button = dropdown.querySelector(".dropdown-button");
+            if (button) {
 
-        if (!button) {
-            return;
-        }
+                button.addEventListener("click", function () {
 
-        button.addEventListener("click", function () {
-            if (window.innerWidth <= 1050) {
-                dropdown.classList.toggle("mobile-open");
+                    if (window.innerWidth <= 1050) {
 
-                button.setAttribute(
-                    "aria-expanded",
-                    dropdown.classList.contains("mobile-open")
-                );
+                        dropdown.classList.toggle(
+                            "mobile-open"
+                        );
+
+                    }
+
+                });
+
             }
+
         });
-    });
-}
 
 
-function initializeFooter() {
-    const yearElements = document.querySelectorAll(".footer-year");
-
-    yearElements.forEach(function (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    });
-}
+        const footerYear =
+            document.querySelector(".footer-year");
 
 
-async function initializeWebsite() {
-    await Promise.all([
-        loadPart("header.html", "header-placeholder"),
-        loadPart("footer.html", "footer-placeholder")
-    ]);
+        if (footerYear) {
 
-    initializeHeader();
-    initializeFooter();
-}
+            footerYear.textContent =
+                new Date().getFullYear();
+
+        }
 
 
-document.addEventListener("DOMContentLoaded", initializeWebsite);
+        console.log(
+            "ABC Bin Rental header and footer loaded successfully"
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Website loading error:",
+            error
+        );
+
+    }
+
+});
