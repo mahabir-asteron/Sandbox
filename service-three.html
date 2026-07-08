@@ -1,1 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ABC Bin Rental provides practical junk removal services for homes, properties and cleanup projects in Edmonton, Alberta."
+    >
+
+    <title>
+        Junk Removal Edmonton | ABC Bin Rental
+    </title>
+
+
+    <style>
+
+        :root {
+            --green: #174f3b;
+            --dark-green: #0d3427;
+            --lime: #d9f24f;
+            --cream: #f6f4ea;
+            --dark: #17241f;
+            --gray: #65716b;
+            --white: #ffffff;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: var(--dark);
+
+            background: var(--cream);
+        }
+
+
+        a {
+            text-decoration: none;
+
+            color: inherit;
+        }
+
+
+        #header {
+            min-height: 84px;
+        }
+
+
+
+        /* =================================
+           HERO
+        ================================= */
+
+
+        .service-hero {
+
+            min-height: 600px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 90px 7.5%;
+
+            color: var(--white);
+
+            position: relative;
+
+            overflow: hidden;
+
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(11, 45, 34, 0.97),
+                    rgba(18, 61, 46, 0.88),
+                    rgba(18, 61, 46, 0.38)
+                ),
+
+                url(
+                    "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1900&q=85"
+                );
+
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .service-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+
+            height: 430px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.12);
+
+            border-radius: 50%;
+
+            right: -110px;
+
+            bottom: -180px;
+
+
+            box-shadow:
+
+                0 0 0 70px
+                rgba(255, 255, 255, 0.03),
+
+                0 0 0 140px
+                rgba(255, 255, 255, 0.02);
+        }
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .eyebrow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 2.2px;
+
+            color: var(--lime);
+
+            margin-bottom: 22px;
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 35px;
+
+            height: 2px;
+
+            background: currentColor;
+        }
+
+
+        h1 {
+
+            font-size:
+                clamp(
+                    52px,
+                    7vw,
+                    90px
+                );
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            margin:
+                0
+                0
+                28px;
+        }
+
+
+        .service-hero p {
+
+            font-size: 19px;
+
+            line-height: 1.75;
+
+            color: #e2ece7;
+
+            max-width: 680px;
+
+            margin:
+                0
+                0
+                35px;
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .primary-btn {
+
+            display: inline-block;
+
+            background: var(--lime);
+
+            color: var(--dark);
+
+            padding:
+                17px
+                25px;
+
+            font-size: 13px;
+
+            font-weight: 900;
+        }
+
+
+        .outline-btn {
+
+            display: inline-block;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.5);
+
+            color: var(--white);
+
+            padding:
+                17px
+                25px;
+
+            font-size: 13px;
+
+            font-weight: 900;
+        }
+
+
+
+        /* =================================
+           ABOUT JUNK REMOVAL
+        ================================= */
+
+
+        .service-about {
+
+            padding: 110px 7.5%;
+
+            max-width: 1500px;
+
+            margin: auto;
+        }
+
+
+        .service-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .service-image {
+
+            position: relative;
+        }
+
+
+        .service-image img {
+
+            width: 100%;
+
+            height: 600px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        .image-label {
+
+            position: absolute;
+
+            right: -30px;
+
+            bottom: 35px;
+
+            width: 230px;
+
+            background: var(--lime);
+
+            padding: 30px;
+        }
+
+
+        .image-label strong {
+
+            display: block;
+
+            color: var(--green);
+
+            font-size: 35px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .image-label span {
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            line-height: 1.5;
+        }
+
+
+        .service-content .eyebrow {
+
+            color: var(--green);
+        }
+
+
+        h2 {
+
+            font-size:
+                clamp(
+                    40px,
+                    5vw,
+                    64px
+                );
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            margin:
+                0
+                0
+                30px;
+        }
+
+
+        .service-content p {
+
+            color: var(--gray);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+
+        .service-list {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+
+        .service-list-item {
+
+            background: var(--white);
+
+            padding: 20px;
+
+            font-size: 15px;
+
+            font-weight: 800;
+        }
+
+
+        .service-list-item span {
+
+            color: var(--green);
+
+            margin-right: 8px;
+        }
+
+
+
+        /* =================================
+           JUNK REMOVAL USES
+        ================================= */
+
+
+        .junk-section {
+
+            padding:
+                20px
+                7.5%
+                110px;
+
+            max-width: 1500px;
+
+            margin: auto;
+        }
+
+
+        .junk-section .eyebrow {
+
+            color: var(--green);
+        }
+
+
+        .junk-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            gap: 50px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .junk-header p {
+
+            color: var(--gray);
+
+            line-height: 1.8;
+
+            max-width: 430px;
+
+            margin: 0;
+        }
+
+
+        .junk-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .junk-card {
+
+            background: var(--white);
+
+            padding: 35px;
+
+            min-height: 285px;
+
+            border-bottom:
+                4px solid transparent;
+
+            transition: 0.25s;
+        }
+
+
+        .junk-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color: var(--lime);
+
+            box-shadow:
+                0 18px 40px
+                rgba(20, 51, 39, 0.09);
+        }
+
+
+        .card-number {
+
+            color: #8b9690;
+
+            font-size: 12px;
+
+            font-weight: 900;
+        }
+
+
+        .card-icon {
+
+            width: 60px;
+
+            height: 60px;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            background: #edf4d0;
+
+            color: var(--green);
+
+            font-size: 25px;
+
+            margin: 25px 0;
+        }
+
+
+        .junk-card h3 {
+
+            font-size: 21px;
+
+            margin:
+                0
+                0
+                12px;
+        }
+
+
+        .junk-card p {
+
+            color: var(--gray);
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+
+        /* =================================
+           PROCESS
+        ================================= */
+
+
+        .process {
+
+            background: var(--green);
+
+            color: var(--white);
+
+            padding: 105px 7.5%;
+        }
+
+
+        .process-inner {
+
+            max-width: 1500px;
+
+            margin: auto;
+        }
+
+
+        .process .eyebrow {
+
+            color: var(--lime);
+        }
+
+
+        .process h2 {
+
+            max-width: 760px;
+        }
+
+
+        .steps {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 1px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
+
+            margin-top: 55px;
+        }
+
+
+        .step {
+
+            background: var(--green);
+
+            padding: 42px;
+        }
+
+
+        .step span {
+
+            font-size: 52px;
+
+            font-weight: 900;
+
+            color: var(--lime);
+        }
+
+
+        .step h3 {
+
+            font-size: 23px;
+
+            margin:
+                25px
+                0
+                15px;
+        }
+
+
+        .step p {
+
+            color: #cfddd7;
+
+            line-height: 1.7;
+
+            margin: 0;
+        }
+
+
+
+        /* =================================
+           WHY CHOOSE US
+        ================================= */
+
+
+        .why-section {
+
+            padding: 110px 7.5%;
+
+            max-width: 1500px;
+
+            margin: auto;
+        }
+
+
+        .why-section .eyebrow {
+
+            color: var(--green);
+        }
+
+
+        .why-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .why-content p {
+
+            color: var(--gray);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        .why-points {
+
+            display: grid;
+
+            gap: 1px;
+
+            background: #d7ddd7;
+        }
+
+
+        .why-point {
+
+            background: var(--white);
+
+            padding: 28px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 20px;
+        }
+
+
+        .why-point span {
+
+            min-width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            background: #edf4d0;
+
+            color: var(--green);
+
+            display: grid;
+
+            place-items: center;
+
+            font-weight: 900;
+        }
+
+
+        .why-point h3 {
+
+            margin:
+                0
+                0
+                8px;
+
+            font-size: 19px;
+        }
+
+
+        .why-point p {
+
+            margin: 0;
+
+            color: var(--gray);
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+
+        /* =================================
+           CTA
+        ================================= */
+
+
+        .cta {
+
+            background: var(--lime);
+
+            padding: 75px 7.5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 35px;
+        }
+
+
+        .cta h2 {
+
+            margin: 0;
+
+            max-width: 780px;
+        }
+
+
+        .dark-btn {
+
+            display: inline-block;
+
+            background: var(--dark-green);
+
+            color: var(--white);
+
+            padding:
+                18px
+                28px;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+
+        #footer {
+
+            min-height: 200px;
+        }
+
+
+
+        /* =================================
+           TABLET
+        ================================= */
+
+
+        @media (max-width: 1000px) {
+
+            .service-grid,
+            .why-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .junk-header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            .junk-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .image-label {
+
+                right: 20px;
+            }
+
+        }
+
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+
+        @media (max-width: 650px) {
+
+            .service-hero {
+
+                min-height: 550px;
+
+                padding:
+                    70px
+                    6%;
+            }
+
+
+            h1 {
+
+                font-size: 52px;
+
+                letter-spacing: -3px;
+            }
+
+
+            .service-about,
+            .process,
+            .why-section {
+
+                padding:
+                    75px
+                    6%;
+            }
+
+
+            .junk-section {
+
+                padding:
+                    10px
+                    6%
+                    75px;
+            }
+
+
+            .service-image img {
+
+                height: 430px;
+            }
+
+
+            .image-label {
+
+                position: relative;
+
+                right: auto;
+
+                bottom: auto;
+
+                width: 100%;
+            }
+
+
+            .service-list,
+            .junk-grid,
+            .steps {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .cta {
+
+                padding:
+                    55px
+                    6%;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+
+    <div id="header"></div>
+
+
+
+    <main>
+
+
+        <!-- =================================
+             HERO
+        ================================= -->
+
+
+        <section class="service-hero">
+
+
+            <div class="hero-content">
+
+
+                <div class="eyebrow">
+
+                    JUNK REMOVAL EDMONTON
+
+                </div>
+
+
+                <h1>
+
+                    CLEAR THE JUNK.<br>
+
+                    RECLAIM YOUR SPACE.
+
+                </h1>
+
+
+                <p>
+
+                    Practical junk removal services for
+                    homes, properties and cleanup projects
+                    across Edmonton, Alberta.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+
+                    <a
+                        class="primary-btn"
+                        href="contact.html"
+                    >
+
+                        GET A FREE QUOTE
+
+                    </a>
+
+
+                    <a
+                        class="outline-btn"
+                        href="tel:0000000000"
+                    >
+
+                        CALL 0000000000
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             ABOUT JUNK REMOVAL
+        ================================= -->
+
+
+        <section class="service-about">
+
+
+            <div class="service-grid">
+
+
+                <div class="service-image">
+
+
+                    <img
+                        src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1000&q=85"
+                        alt="Junk removal services Edmonton"
+                    >
+
+
+                    <div class="image-label">
+
+
+                        <strong>
+
+                            ABC
+
+                        </strong>
+
+
+                        <span>
+
+                            PRACTICAL JUNK REMOVAL
+                            IN EDMONTON
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="service-content">
+
+
+                    <div class="eyebrow">
+
+                        JUNK REMOVAL SERVICE
+
+                    </div>
+
+
+                    <h2>
+
+                        LESS CLUTTER.
+                        MORE USABLE SPACE.
+
+                    </h2>
+
+
+                    <p>
+
+                        Unwanted items and accumulated
+                        clutter can quickly take over
+                        valuable space in your home or
+                        property.
+
+                    </p>
+
+
+                    <p>
+
+                        ABC Bin Rental provides practical
+                        junk removal services for
+                        homeowners, property owners and
+                        businesses throughout Edmonton.
+
+                    </p>
+
+
+                    <p>
+
+                        Whether you are completing a
+                        property cleanout or simply need
+                        help clearing unwanted materials,
+                        our service is designed to make
+                        cleanup more manageable.
+
+                    </p>
+
+
+
+                    <div class="service-list">
+
+
+                        <div class="service-list-item">
+
+                            <span>✓</span>
+
+                            Household Junk
+
+                        </div>
+
+
+                        <div class="service-list-item">
+
+                            <span>✓</span>
+
+                            Property Cleanouts
+
+                        </div>
+
+
+                        <div class="service-list-item">
+
+                            <span>✓</span>
+
+                            General Clutter
+
+                        </div>
+
+
+                        <div class="service-list-item">
+
+                            <span>✓</span>
+
+                            Project Waste
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             JUNK REMOVAL TYPES
+        ================================= -->
+
+
+        <section class="junk-section">
+
+
+            <div class="junk-header">
+
+
+                <div>
+
+
+                    <div class="eyebrow">
+
+                        WHAT WE HELP REMOVE
+
+                    </div>
+
+
+                    <h2>
+
+                        JUNK REMOVAL
+                        FOR DIFFERENT NEEDS.
+
+                    </h2>
+
+
+                </div>
+
+
+                <p>
+
+                    Our junk removal services support
+                    different property and cleanup
+                    projects throughout Edmonton.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="junk-grid">
+
+
+                <article class="junk-card">
+
+
+                    <span class="card-number">
+
+                        01
+
+                    </span>
+
+
+                    <div class="card-icon">
+
+                        ⌂
+
+                    </div>
+
+
+                    <h3>
+
+                        Household Junk
+
+                    </h3>
+
+
+                    <p>
+
+                        Clear unwanted household items
+                        and general clutter from your
+                        living space.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <article class="junk-card">
+
+
+                    <span class="card-number">
+
+                        02
+
+                    </span>
+
+
+                    <div class="card-icon">
+
+                        ◫
+
+                    </div>
+
+
+                    <h3>
+
+                        Property Cleanouts
+
+                    </h3>
+
+
+                    <p>
+
+                        Practical junk removal support
+                        for residential and property
+                        cleanup projects.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <article class="junk-card">
+
+
+                    <span class="card-number">
+
+                        03
+
+                    </span>
+
+
+                    <div class="card-icon">
+
+                        ↗
+
+                    </div>
+
+
+                    <h3>
+
+                        General Clutter
+
+                    </h3>
+
+
+                    <p>
+
+                        Remove accumulated materials
+                        that are taking up valuable
+                        space around your property.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <article class="junk-card">
+
+
+                    <span class="card-number">
+
+                        04
+
+                    </span>
+
+
+                    <div class="card-icon">
+
+                        ⚒
+
+                    </div>
+
+
+                    <h3>
+
+                        Project Waste
+
+                    </h3>
+
+
+                    <p>
+
+                        Cleanup support for unwanted
+                        materials created during
+                        property and project work.
+
+                    </p>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             PROCESS
+        ================================= -->
+
+
+        <section class="process">
+
+
+            <div class="process-inner">
+
+
+                <div class="eyebrow">
+
+                    HOW JUNK REMOVAL WORKS
+
+                </div>
+
+
+                <h2>
+
+                    THREE SIMPLE STEPS
+                    TO A CLEARER SPACE.
+
+                </h2>
+
+
+
+                <div class="steps">
+
+
+                    <div class="step">
+
+
+                        <span>
+
+                            01
+
+                        </span>
+
+
+                        <h3>
+
+                            Tell Us What You Need Removed
+
+                        </h3>
+
+
+                        <p>
+
+                            Contact ABC Bin Rental and
+                            share details about your
+                            junk removal or cleanout
+                            project.
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="step">
+
+
+                        <span>
+
+                            02
+
+                        </span>
+
+
+                        <h3>
+
+                            Schedule Your Service
+
+                        </h3>
+
+
+                        <p>
+
+                            Choose a suitable service
+                            time for your Edmonton
+                            property or cleanup project.
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="step">
+
+
+                        <span>
+
+                            03
+
+                        </span>
+
+
+                        <h3>
+
+                            Reclaim Your Space
+
+                        </h3>
+
+
+                        <p>
+
+                            Move forward with less
+                            clutter and a cleaner,
+                            more usable property space.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             WHY CHOOSE US
+        ================================= -->
+
+
+        <section class="why-section">
+
+
+            <div class="why-grid">
+
+
+                <div class="why-content">
+
+
+                    <div class="eyebrow">
+
+                        WHY ABC BIN RENTAL
+
+                    </div>
+
+
+                    <h2>
+
+                        JUNK REMOVAL
+                        WITHOUT THE
+                        COMPLICATION.
+
+                    </h2>
+
+
+                    <p>
+
+                        Our goal is to help Edmonton
+                        customers clear unwanted
+                        materials with a straightforward
+                        cleanup process.
+
+                    </p>
+
+
+                    <p>
+
+                        We focus on practical service,
+                        clear communication and junk
+                        removal solutions for different
+                        property and project needs.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="why-points">
+
+
+                    <div class="why-point">
+
+
+                        <span>
+
+                            01
+
+                        </span>
+
+
+                        <div>
+
+
+                            <h3>
+
+                                Local Edmonton Service
+
+                            </h3>
+
+
+                            <p>
+
+                                Junk removal support for
+                                Edmonton homes, properties
+                                and projects.
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="why-point">
+
+
+                        <span>
+
+                            02
+
+                        </span>
+
+
+                        <div>
+
+
+                            <h3>
+
+                                Straightforward Process
+
+                            </h3>
+
+
+                            <p>
+
+                                Simple service planning
+                                designed to make cleanup
+                                easier to manage.
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="why-point">
+
+
+                        <span>
+
+                            03
+
+                        </span>
+
+
+                        <div>
+
+
+                            <h3>
+
+                                Multiple Cleanup Needs
+
+                            </h3>
+
+
+                            <p>
+
+                                Practical support for
+                                clutter, cleanouts and
+                                project waste.
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             CTA
+        ================================= -->
+
+
+        <section class="cta">
+
+
+            <h2>
+
+                READY TO CLEAR
+                YOUR UNWANTED JUNK?
+
+            </h2>
+
+
+            <a
+                class="dark-btn"
+                href="contact.html"
+            >
+
+                REQUEST A FREE QUOTE
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+
+    <div id="footer"></div>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================= -->
+
+
+    <script>
+
+        async function loadSection(id, file) {
+
+            try {
+
+                const response =
+                    await fetch("./" + file);
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "HTTP error: "
+                        + response.status
+                    );
+
+                }
+
+
+                const content =
+                    await response.text();
+
+
+                document
+                    .getElementById(id)
+                    .innerHTML = content;
+
+
+
+                if (id === "header") {
+
+                    const button =
+                        document.querySelector(
+                            ".menu-toggle"
+                        );
+
+
+                    const nav =
+                        document.querySelector(
+                            ".main-nav"
+                        );
+
+
+                    if (button && nav) {
+
+                        button.addEventListener(
+
+                            "click",
+
+                            function () {
+
+                                nav.classList.toggle(
+                                    "open"
+                                );
+
+                            }
+
+                        );
+
+                    }
+
+                }
+
+            }
+
+
+            catch (error) {
+
+                console.error(
+
+                    "Unable to load "
+                    + file,
+
+                    error
+
+                );
+
+            }
+
+        }
+
+
+
+        document.addEventListener(
+
+            "DOMContentLoaded",
+
+            function () {
+
+                loadSection(
+                    "header",
+                    "header.html"
+                );
+
+
+                loadSection(
+                    "footer",
+                    "footer.html"
+                );
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+
+</html>
