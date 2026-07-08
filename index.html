@@ -1504,9 +1504,223 @@
         );
 
 
-    </script>
+<script>
+
+    async function loadSection(id, file) {
+
+        try {
+
+            const response =
+                await fetch(file);
 
 
-</body>
+            if (!response.ok) {
 
-</html>
+                throw new Error(
+                    "Unable to load " + file
+                );
+
+            }
+
+
+            const html =
+                await response.text();
+
+
+            document
+                .getElementById(id)
+                .innerHTML = html;
+
+
+            if (id === "header") {
+
+                initializeHeader();
+
+            }
+
+
+            if (id === "footer") {
+
+                initializeFooter();
+
+            }
+
+        }
+
+
+        catch (error) {
+
+            console.error(error);
+
+        }
+
+    }
+
+
+
+    function initializeHeader() {
+
+        const menuButton =
+            document.querySelector(
+                ".menu-toggle"
+            );
+
+
+        const navigation =
+            document.querySelector(
+                ".main-nav"
+            );
+
+
+        const dropdowns =
+            document.querySelectorAll(
+                ".dropdown"
+            );
+
+
+        if (
+            menuButton &&
+            navigation
+        ) {
+
+            menuButton.addEventListener(
+                "click",
+                function () {
+
+                    navigation.classList.toggle(
+                        "open"
+                    );
+
+
+                    menuButton.classList.toggle(
+                        "active"
+                    );
+
+
+                    const isOpen =
+                        navigation.classList.contains(
+                            "open"
+                        );
+
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        isOpen
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        dropdowns.forEach(
+            function (dropdown) {
+
+                const button =
+                    dropdown.querySelector(
+                        ".dropdown-button"
+                    );
+
+
+                if (!button) {
+
+                    return;
+
+                }
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        if (
+                            window.innerWidth <= 1050
+                        ) {
+
+                            dropdown.classList.toggle(
+                                "mobile-open"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                button.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+
+                            if (
+                                window.innerWidth <= 1050
+                            ) {
+
+                                dropdown.classList.toggle(
+                                    "mobile-open"
+                                );
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+
+    function initializeFooter() {
+
+        const year =
+            document.querySelector(
+                ".footer-year"
+            );
+
+
+        if (year) {
+
+            year.textContent =
+                new Date().getFullYear();
+
+        }
+
+    }
+
+
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            loadSection(
+                "header",
+                "header.html"
+            );
+
+
+            loadSection(
+                "footer",
+                "footer.html"
+            );
+
+        }
+    );
+
+</script>
+
+<div id="header"></div>
+<div id="footer"></div>
