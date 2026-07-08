@@ -1,302 +1,14 @@
-<!-- =================================
-     ABC BIN RENTAL FOOTER
-================================= -->
-
-<style>
-
-    :root {
-        --footer-green: #174f3b;
-        --footer-dark: #0d3427;
-        --footer-lime: #d9f24f;
-        --footer-white: #ffffff;
-        --footer-text: #cbd8d2;
-    }
-
-
-    .site-footer,
-    .site-footer * {
-        box-sizing: border-box;
-    }
-
-
-    .site-footer {
-        background: var(--footer-dark);
-        color: var(--footer-white);
-        width: 100%;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-
-    .footer-main {
-        max-width: 1500px;
-        margin: auto;
-        padding: 80px 7.5% 65px;
-        display: grid;
-        grid-template-columns: 1.5fr 0.8fr 0.9fr 1fr;
-        gap: 65px;
-    }
-
-
-    .footer-brand {
-        max-width: 390px;
-    }
-
-
-    .footer-logo {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        color: var(--footer-white);
-        text-decoration: none;
-        margin-bottom: 28px;
-    }
-
-
-    .footer-logo-icon {
-        width: 52px;
-        height: 52px;
-        background: var(--footer-lime);
-        display: grid;
-        place-items: center;
-        position: relative;
-        overflow: hidden;
-        flex-shrink: 0;
-    }
-
-
-    .footer-logo-icon::before {
-        content: "";
-        width: 21px;
-        height: 18px;
-        border: 3px solid var(--footer-dark);
-        border-top: 0;
-        transform: skew(-5deg);
-    }
-
-
-    .footer-logo-icon::after {
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 3px;
-        background: var(--footer-dark);
-        top: 14px;
-        left: 13px;
-    }
-
-
-    .footer-logo-text {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    .footer-logo-text strong {
-        font-size: 21px;
-        line-height: 1;
-        font-weight: 900;
-    }
-
-
-    .footer-logo-text span {
-        margin-top: 6px;
-        color: var(--footer-lime);
-        font-size: 9px;
-        font-weight: 900;
-        letter-spacing: 1.7px;
-    }
-
-
-    .footer-description {
-        color: var(--footer-text);
-        font-size: 15px;
-        line-height: 1.8;
-        margin: 0 0 30px;
-    }
-
-
-    .footer-quote {
-        display: inline-block;
-        background: var(--footer-lime);
-        color: var(--footer-dark);
-        padding: 16px 23px;
-        font-size: 12px;
-        font-weight: 900;
-        text-decoration: none;
-    }
-
-
-    .footer-column h3 {
-        margin: 0 0 27px;
-        color: var(--footer-white);
-        font-size: 13px;
-        font-weight: 900;
-        letter-spacing: 1.5px;
-    }
-
-
-    .footer-column h3::after {
-        content: "";
-        display: block;
-        width: 30px;
-        height: 2px;
-        margin-top: 12px;
-        background: var(--footer-lime);
-    }
-
-
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-
-    .footer-links a {
-        color: var(--footer-text);
-        font-size: 14px;
-        text-decoration: none;
-    }
-
-
-    .footer-links a:hover {
-        color: var(--footer-lime);
-    }
-
-
-    .footer-contact {
-        display: grid;
-        gap: 22px;
-    }
-
-
-    .footer-contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 14px;
-    }
-
-
-    .footer-contact-icon {
-        min-width: 38px;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: rgba(217, 242, 79, 0.12);
-        color: var(--footer-lime);
-        display: grid;
-        place-items: center;
-        font-size: 15px;
-        font-weight: 900;
-    }
-
-
-    .footer-contact-item small {
-        display: block;
-        margin-bottom: 5px;
-        color: #8fa69c;
-        font-size: 9px;
-        font-weight: 900;
-        letter-spacing: 1.2px;
-    }
-
-
-    .footer-contact-item strong,
-    .footer-contact-item a {
-        color: var(--footer-text);
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 1.6;
-        text-decoration: none;
-        word-break: break-word;
-    }
-
-
-    .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.10);
-    }
-
-
-    .footer-bottom-inner {
-        max-width: 1500px;
-        margin: auto;
-        padding: 25px 7.5%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-    }
-
-
-    .footer-bottom p {
-        margin: 0;
-        color: #8fa69c;
-        font-size: 12px;
-    }
-
-
-    .footer-bottom-links {
-        display: flex;
-        gap: 25px;
-    }
-
-
-    .footer-bottom-links a {
-        color: #8fa69c;
-        font-size: 12px;
-        text-decoration: none;
-    }
-
-
-    @media (max-width: 1100px) {
-
-        .footer-main {
-            grid-template-columns: 1fr 1fr;
-            gap: 55px;
-        }
-
-    }
-
-
-    @media (max-width: 650px) {
-
-        .footer-main {
-            padding: 65px 6% 50px;
-            grid-template-columns: 1fr;
-            gap: 45px;
-        }
-
-
-        .footer-bottom-inner {
-            padding: 25px 6%;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-
-        .footer-bottom-links {
-            flex-wrap: wrap;
-        }
-
-    }
-
-</style>
-
-
 <footer class="site-footer">
 
     <div class="footer-main">
 
+        <!-- FOOTER BRAND -->
 
         <div class="footer-brand">
 
-            <a
-                href="index.html"
-                class="footer-logo"
-            >
+            <a href="index.html" class="footer-logo">
 
                 <div class="footer-logo-icon"></div>
-
 
                 <div class="footer-logo-text">
 
@@ -315,8 +27,8 @@
 
             <p class="footer-description">
 
-                Practical bin rental, cleaning and junk
-                removal services for homeowners,
+                Practical bin rental, cleaning and
+                junk removal services for homeowners,
                 contractors, property owners and
                 businesses across Edmonton, Alberta.
 
@@ -327,11 +39,15 @@
                 href="contact.html"
                 class="footer-quote"
             >
+
                 GET A FREE QUOTE
+
             </a>
 
         </div>
 
+
+        <!-- QUICK LINKS -->
 
         <div class="footer-column">
 
@@ -342,20 +58,32 @@
 
             <div class="footer-links">
 
-                <a href="index.html">Home</a>
+                <a href="index.html">
+                    Home
+                </a>
 
-                <a href="about.html">About Us</a>
+                <a href="about.html">
+                    About Us
+                </a>
 
-                <a href="service.html">Services</a>
+                <a href="service.html">
+                    Services
+                </a>
 
-                <a href="projects.html">Projects</a>
+                <a href="projects.html">
+                    Projects
+                </a>
 
-                <a href="contact.html">Contact Us</a>
+                <a href="contact.html">
+                    Contact Us
+                </a>
 
             </div>
 
         </div>
 
+
+        <!-- SERVICES -->
 
         <div class="footer-column">
 
@@ -387,6 +115,8 @@
         </div>
 
 
+        <!-- CONTACT -->
+
         <div class="footer-column">
 
             <h3>
@@ -396,12 +126,12 @@
 
             <div class="footer-contact">
 
-
                 <div class="footer-contact-item">
 
                     <div class="footer-contact-icon">
                         ☎
                     </div>
+
 
                     <div>
 
@@ -424,6 +154,7 @@
                         @
                     </div>
 
+
                     <div>
 
                         <small>
@@ -445,6 +176,7 @@
                         ⌖
                     </div>
 
+
                     <div>
 
                         <small>
@@ -459,22 +191,24 @@
 
                 </div>
 
-
             </div>
 
         </div>
 
-
     </div>
 
+
+    <!-- FOOTER BOTTOM -->
 
     <div class="footer-bottom">
 
         <div class="footer-bottom-inner">
 
             <p>
+
                 © <span class="footer-year"></span>
                 ABC Bin Rental. All rights reserved.
+
             </p>
 
 
@@ -499,3 +233,5 @@
     </div>
 
 </footer>
+<span id="footerYear"></span>
+<span class="footer-year"></span>
