@@ -868,7 +868,7 @@
     <!-- HEADER -->
 
 
-    <div id="header"></div>
+    <div id="header-placeholder"></div>
 
 
 
@@ -1434,121 +1434,18 @@
     <!-- FOOTER -->
 
 
-    <div id="footer"></div>
+    <div id="footer-placeholder"></div>
 
 
 
-    <!-- =================================
-         JAVASCRIPT
-    ================================= -->
+    <!-- SHARED WEBSITE SCRIPT -->
 
+    <script src="./script.js?v=2"></script>
+
+
+    <!-- CONTACT FORM SCRIPT -->
 
     <script>
-
-        async function loadSection(id, file) {
-
-            try {
-
-                const response =
-                    await fetch("./" + file);
-
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "HTTP error: "
-                        + response.status
-                    );
-
-                }
-
-
-                const content =
-                    await response.text();
-
-
-                document
-                    .getElementById(id)
-                    .innerHTML = content;
-
-
-
-                if (id === "header") {
-
-                    const button =
-                        document.querySelector(
-                            ".menu-toggle"
-                        );
-
-
-                    const nav =
-                        document.querySelector(
-                            ".main-nav"
-                        );
-
-
-                    if (button && nav) {
-
-                        button.addEventListener(
-
-                            "click",
-
-                            function () {
-
-                                nav.classList.toggle(
-                                    "open"
-                                );
-
-                            }
-
-                        );
-
-                    }
-
-                }
-
-            }
-
-
-            catch (error) {
-
-                console.error(
-
-                    "Unable to load "
-                    + file,
-
-                    error
-
-                );
-
-            }
-
-        }
-
-
-
-        document.addEventListener(
-
-            "DOMContentLoaded",
-
-            function () {
-
-                loadSection(
-                    "header",
-                    "header.html"
-                );
-
-
-                loadSection(
-                    "footer",
-                    "footer.html"
-                );
-
-            }
-
-        );
-
-
 
         document
             .getElementById("contactForm")
@@ -1558,85 +1455,30 @@
 
                     event.preventDefault();
 
-
-                    const name =
-                        document
-                            .getElementById("name")
-                            .value;
-
-
-                    const phone =
-                        document
-                            .getElementById("phone")
-                            .value;
-
-
-                    const email =
-                        document
-                            .getElementById("email")
-                            .value;
-
-
-                    const service =
-                        document
-                            .getElementById("service")
-                            .value;
-
-
-                    const message =
-                        document
-                            .getElementById("message")
-                            .value;
-
-
+                    const name = document.getElementById("name").value;
+                    const phone = document.getElementById("phone").value;
+                    const email = document.getElementById("email").value;
+                    const service = document.getElementById("service").value;
+                    const message = document.getElementById("message").value;
 
                     const subject =
-
-                        "Free Quote Request - "
-                        + service;
-
-
+                        "Free Quote Request - " + service;
 
                     const body =
-
-                        "Name: "
-                        + name
-                        + "\n\n"
-
-                        + "Phone: "
-                        + phone
-                        + "\n\n"
-
-                        + "Email: "
-                        + email
-                        + "\n\n"
-
-                        + "Service Needed: "
-                        + service
-                        + "\n\n"
-
-                        + "Project Details:\n"
-                        + message;
-
-
+                        "Name: " + name + "\\n\\n"
+                        + "Phone: " + phone + "\\n\\n"
+                        + "Email: " + email + "\\n\\n"
+                        + "Service Needed: " + service + "\\n\\n"
+                        + "Project Details:\\n" + message;
 
                     document
                         .getElementById("formMessage")
-                        .style
-                        .display = "block";
-
-
+                        .style.display = "block";
 
                     window.location.href =
-
                         "mailto:binrental@gmail.com"
-
-                        + "?subject="
-                        + encodeURIComponent(subject)
-
-                        + "&body="
-                        + encodeURIComponent(body);
-
+                        + "?subject=" + encodeURIComponent(subject)
+                        + "&body=" + encodeURIComponent(body);
                 }
             );
 
