@@ -13,10 +13,17 @@
     }
 
 
+    .site-footer,
+    .site-footer * {
+        box-sizing: border-box;
+    }
+
+
     .site-footer {
         background: var(--footer-dark);
         color: var(--footer-white);
         width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
 
@@ -28,11 +35,6 @@
         grid-template-columns: 1.5fr 0.8fr 0.9fr 1fr;
         gap: 65px;
     }
-
-
-    /* =================================
-       FOOTER BRAND
-    ================================= */
 
 
     .footer-brand {
@@ -93,7 +95,6 @@
         font-size: 21px;
         line-height: 1;
         font-weight: 900;
-        letter-spacing: -0.8px;
     }
 
 
@@ -121,21 +122,8 @@
         padding: 16px 23px;
         font-size: 12px;
         font-weight: 900;
-        letter-spacing: 0.5px;
         text-decoration: none;
-        transition: 0.2s;
     }
-
-
-    .footer-quote:hover {
-        background: var(--footer-white);
-        transform: translateY(-2px);
-    }
-
-
-    /* =================================
-       FOOTER COLUMNS
-    ================================= */
 
 
     .footer-column h3 {
@@ -167,21 +155,13 @@
     .footer-links a {
         color: var(--footer-text);
         font-size: 14px;
-        line-height: 1.5;
         text-decoration: none;
-        transition: 0.2s;
     }
 
 
     .footer-links a:hover {
         color: var(--footer-lime);
-        transform: translateX(4px);
     }
-
-
-    /* =================================
-       CONTACT DETAILS
-    ================================= */
 
 
     .footer-contact {
@@ -232,16 +212,6 @@
     }
 
 
-    .footer-contact-item a:hover {
-        color: var(--footer-lime);
-    }
-
-
-    /* =================================
-       FOOTER BOTTOM
-    ================================= */
-
-
     .footer-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.10);
     }
@@ -262,13 +232,11 @@
         margin: 0;
         color: #8fa69c;
         font-size: 12px;
-        line-height: 1.6;
     }
 
 
     .footer-bottom-links {
         display: flex;
-        align-items: center;
         gap: 25px;
     }
 
@@ -277,18 +245,7 @@
         color: #8fa69c;
         font-size: 12px;
         text-decoration: none;
-        transition: 0.2s;
     }
-
-
-    .footer-bottom-links a:hover {
-        color: var(--footer-lime);
-    }
-
-
-    /* =================================
-       TABLET
-    ================================= */
 
 
     @media (max-width: 1100px) {
@@ -298,17 +255,7 @@
             gap: 55px;
         }
 
-
-        .footer-brand {
-            max-width: 500px;
-        }
-
     }
-
-
-    /* =================================
-       MOBILE
-    ================================= */
 
 
     @media (max-width: 650px) {
@@ -324,24 +271,11 @@
             padding: 25px 6%;
             flex-direction: column;
             align-items: flex-start;
-            gap: 18px;
         }
 
 
         .footer-bottom-links {
             flex-wrap: wrap;
-            gap: 15px 22px;
-        }
-
-
-        .footer-logo-icon {
-            width: 48px;
-            height: 48px;
-        }
-
-
-        .footer-logo-text strong {
-            font-size: 19px;
         }
 
     }
@@ -351,43 +285,30 @@
 
 <footer class="site-footer">
 
-
     <div class="footer-main">
-
-
-        <!-- =================================
-             BRAND
-        ================================= -->
 
 
         <div class="footer-brand">
 
-
             <a
                 href="index.html"
                 class="footer-logo"
-                aria-label="ABC Bin Rental Home"
             >
-
 
                 <div class="footer-logo-icon"></div>
 
 
                 <div class="footer-logo-text">
 
-
                     <strong>
                         ABC BIN RENTAL
                     </strong>
-
 
                     <span>
                         EDMONTON · ALBERTA
                     </span>
 
-
                 </div>
-
 
             </a>
 
@@ -406,23 +327,13 @@
                 href="contact.html"
                 class="footer-quote"
             >
-
                 GET A FREE QUOTE
-
             </a>
-
 
         </div>
 
 
-
-        <!-- =================================
-             QUICK LINKS
-        ================================= -->
-
-
         <div class="footer-column">
-
 
             <h3>
                 QUICK LINKS
@@ -431,46 +342,22 @@
 
             <div class="footer-links">
 
+                <a href="index.html">Home</a>
 
-                <a href="index.html">
-                    Home
-                </a>
+                <a href="about.html">About Us</a>
 
+                <a href="service.html">Services</a>
 
-                <a href="about.html">
-                    About Us
-                </a>
+                <a href="projects.html">Projects</a>
 
-
-                <a href="service.html">
-                    Services
-                </a>
-
-
-                <a href="projects.html">
-                    Projects
-                </a>
-
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
+                <a href="contact.html">Contact Us</a>
 
             </div>
-
 
         </div>
 
 
-
-        <!-- =================================
-             SERVICES
-        ================================= -->
-
-
         <div class="footer-column">
-
 
             <h3>
                 OUR SERVICES
@@ -479,41 +366,28 @@
 
             <div class="footer-links">
 
-
                 <a href="service-one.html">
                     Bin Rental
                 </a>
-
 
                 <a href="service-two.html">
                     Cleaning Services
                 </a>
 
-
                 <a href="service-three.html">
                     Junk Removal
                 </a>
-
 
                 <a href="contact.html">
                     Request a Quote
                 </a>
 
-
             </div>
-
 
         </div>
 
 
-
-        <!-- =================================
-             CONTACT
-        ================================= -->
-
-
         <div class="footer-column">
-
 
             <h3>
                 CONTACT US
@@ -525,161 +399,103 @@
 
                 <div class="footer-contact-item">
 
-
                     <div class="footer-contact-icon">
                         ☎
                     </div>
 
-
                     <div>
-
 
                         <small>
                             PHONE
                         </small>
 
-
                         <a href="tel:0000000000">
                             0000000000
                         </a>
 
-
                     </div>
-
 
                 </div>
 
 
-
                 <div class="footer-contact-item">
-
 
                     <div class="footer-contact-icon">
                         @
                     </div>
 
-
                     <div>
-
 
                         <small>
                             EMAIL
                         </small>
 
-
                         <a href="mailto:binrental@gmail.com">
                             binrental@gmail.com
                         </a>
 
-
                     </div>
-
 
                 </div>
 
 
-
                 <div class="footer-contact-item">
-
 
                     <div class="footer-contact-icon">
                         ⌖
                     </div>
 
-
                     <div>
-
 
                         <small>
                             SERVICE AREA
                         </small>
 
-
                         <strong>
                             Edmonton, Alberta
                         </strong>
 
-
                     </div>
-
 
                 </div>
 
 
             </div>
 
-
         </div>
 
 
     </div>
 
 
-
-    <!-- =================================
-         FOOTER BOTTOM
-    ================================= -->
-
-
     <div class="footer-bottom">
-
 
         <div class="footer-bottom-inner">
 
-
             <p>
-
-                © <span id="footerYear"></span>
+                © <span class="footer-year"></span>
                 ABC Bin Rental. All rights reserved.
-
             </p>
 
 
             <div class="footer-bottom-links">
 
-
                 <a href="contact.html">
                     Contact
                 </a>
-
 
                 <a href="service.html">
                     Services
                 </a>
 
-
                 <a href="index.html">
                     Edmonton, Alberta
                 </a>
 
-
             </div>
-
 
         </div>
 
-
     </div>
 
-
 </footer>
-
-
-<script>
-
-    (function () {
-
-        const yearElement =
-            document.getElementById("footerYear");
-
-
-        if (yearElement) {
-
-            yearElement.textContent =
-                new Date().getFullYear();
-
-        }
-
-    })();
-
-</script>
