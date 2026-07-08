@@ -12,7 +12,7 @@
 
     <meta
         name="description"
-        content="ABC Bin Rental provides reliable bin rental services for home cleanouts, renovations and project debris in Edmonton, Alberta."
+        content="ABC Bin Rental provides practical bin rental services for home cleanouts, renovations and property cleanup projects in Edmonton, Alberta."
     >
 
     <title>
@@ -30,6 +30,7 @@
             --dark: #17241f;
             --gray: #65716b;
             --white: #ffffff;
+            --border: #dce2dd;
         }
 
 
@@ -45,27 +46,256 @@
 
         body {
             margin: 0;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
             color: var(--dark);
-
             background: var(--cream);
         }
 
 
         a {
-            text-decoration: none;
-
             color: inherit;
+            text-decoration: none;
         }
 
 
-        #header {
-            min-height: 84px;
+        button {
+            font: inherit;
+        }
+
+
+
+        /* =================================
+           HEADER
+        ================================= */
+
+
+        .site-header {
+            width: 100%;
+            height: 84px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 9999;
+            border-bottom: 1px solid rgba(23, 79, 59, 0.10);
+        }
+
+
+        .header-container {
+            width: 100%;
+            max-width: 1500px;
+            margin: auto;
+            padding: 0 7.5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-shrink: 0;
+        }
+
+
+        .logo-icon {
+            width: 47px;
+            height: 47px;
+            background: var(--green);
+            display: grid;
+            place-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .logo-icon::before {
+            content: "";
+            width: 20px;
+            height: 17px;
+            border: 3px solid var(--lime);
+            border-top: 0;
+            transform: skew(-5deg);
+        }
+
+
+        .logo-icon::after {
+            content: "";
+            position: absolute;
+            width: 24px;
+            height: 3px;
+            background: var(--lime);
+            top: 13px;
+            left: 11px;
+        }
+
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .logo-text strong {
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: -0.7px;
+        }
+
+
+        .logo-text span {
+            margin-top: 5px;
+            color: var(--gray);
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1.6px;
+        }
+
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+
+        .main-nav > a,
+        .dropdown-button {
+            color: var(--dark-green);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+
+        .main-nav > a:hover,
+        .dropdown-button:hover {
+            color: var(--green);
+        }
+
+
+        .dropdown {
+            position: relative;
+        }
+
+
+        .dropdown-button {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            cursor: pointer;
+            padding: 34px 0;
+            user-select: none;
+        }
+
+
+        .dropdown-arrow {
+            font-size: 9px;
+            transition: 0.2s;
+        }
+
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+
+        .dropdown-menu {
+            position: absolute;
+            top: 77px;
+            left: -25px;
+            width: 235px;
+            background: var(--white);
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: 0.22s;
+            box-shadow: 0 18px 45px rgba(13, 52, 39, 0.15);
+            border-top: 3px solid var(--lime);
+        }
+
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+        .dropdown-menu a {
+            display: block;
+            padding: 14px 15px;
+            color: var(--dark-green);
+            font-size: 12px;
+            font-weight: 800;
+            transition: 0.2s;
+        }
+
+
+        .dropdown-menu a:hover {
+            background: #edf4d0;
+            color: var(--green);
+            padding-left: 20px;
+        }
+
+
+        .header-cta {
+            background: var(--green);
+            color: var(--white);
+            padding: 16px 23px;
+            font-size: 12px;
+            font-weight: 900;
+            flex-shrink: 0;
+            transition: 0.2s;
+        }
+
+
+        .header-cta:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+
+        .menu-toggle {
+            width: 48px;
+            height: 48px;
+            border: 0;
+            background: var(--green);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0;
+        }
+
+
+        .menu-toggle span {
+            width: 21px;
+            height: 2px;
+            background: var(--lime);
+            transition: 0.25s;
+        }
+
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
 
@@ -76,498 +306,363 @@
 
 
         .service-hero {
-
-            min-height: 600px;
-
+            min-height: 680px;
             display: flex;
-
             align-items: center;
-
-            padding: 90px 7.5%;
-
+            padding: 100px 7.5%;
             color: var(--white);
-
             position: relative;
-
             overflow: hidden;
 
-
             background:
-
                 linear-gradient(
                     90deg,
-                    rgba(11, 45, 34, 0.97),
-                    rgba(18, 61, 46, 0.88),
-                    rgba(18, 61, 46, 0.38)
+                    rgba(11, 45, 34, 0.98),
+                    rgba(18, 61, 46, 0.86),
+                    rgba(18, 61, 46, 0.25)
                 ),
-
                 url(
-                    "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1900&q=85"
+                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1900&q=85"
                 );
 
-
             background-size: cover;
-
             background-position: center;
         }
 
 
         .service-hero::after {
-
             content: "";
-
             position: absolute;
-
-            width: 430px;
-
-            height: 430px;
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.12);
-
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 50%;
-
-            right: -110px;
-
-            bottom: -180px;
-
+            right: -120px;
+            bottom: -190px;
 
             box-shadow:
-
-                0 0 0 70px
-                rgba(255, 255, 255, 0.03),
-
-                0 0 0 140px
-                rgba(255, 255, 255, 0.02);
+                0 0 0 75px rgba(255, 255, 255, 0.03),
+                0 0 0 150px rgba(255, 255, 255, 0.02);
         }
 
 
         .hero-content {
-
-            max-width: 850px;
-
+            max-width: 950px;
             position: relative;
-
             z-index: 2;
         }
 
 
         .eyebrow {
-
             display: flex;
-
             align-items: center;
-
             gap: 10px;
-
-            font-size: 12px;
-
-            font-weight: 900;
-
-            letter-spacing: 2.2px;
-
             color: var(--lime);
-
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 2.2px;
             margin-bottom: 22px;
         }
 
 
         .eyebrow::before {
-
             content: "";
-
             width: 35px;
-
             height: 2px;
-
             background: currentColor;
         }
 
 
         h1 {
-
-            font-size:
-                clamp(
-                    52px,
-                    7vw,
-                    90px
-                );
-
-            line-height: 0.95;
-
-            letter-spacing: -5px;
-
-            margin:
-                0
-                0
-                28px;
+            font-size: clamp(60px, 8vw, 110px);
+            line-height: 0.88;
+            letter-spacing: -6px;
+            margin: 0 0 32px;
         }
 
 
-        .service-hero p {
-
-            font-size: 19px;
-
-            line-height: 1.75;
-
+        .hero-content p {
+            max-width: 720px;
+            margin: 0 0 38px;
             color: #e2ece7;
-
-            max-width: 680px;
-
-            margin:
-                0
-                0
-                35px;
+            font-size: 19px;
+            line-height: 1.75;
         }
 
 
         .hero-buttons {
-
             display: flex;
-
             gap: 14px;
-
             flex-wrap: wrap;
         }
 
 
         .primary-btn {
-
             display: inline-block;
-
             background: var(--lime);
-
-            color: var(--dark);
-
-            padding:
-                17px
-                25px;
-
+            color: var(--dark-green);
+            padding: 19px 28px;
             font-size: 13px;
-
             font-weight: 900;
+            transition: 0.2s;
+        }
+
+
+        .primary-btn:hover {
+            background: var(--white);
+            transform: translateY(-2px);
         }
 
 
         .outline-btn {
-
             display: inline-block;
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.5);
-
+            border: 1px solid rgba(255, 255, 255, 0.50);
             color: var(--white);
-
-            padding:
-                17px
-                25px;
-
+            padding: 19px 28px;
             font-size: 13px;
-
             font-weight: 900;
+            transition: 0.2s;
+        }
+
+
+        .outline-btn:hover {
+            background: var(--white);
+            color: var(--green);
         }
 
 
 
         /* =================================
-           ABOUT SERVICE
+           INTRO
         ================================= */
 
 
-        .service-about {
-
-            padding: 110px 7.5%;
-
+        .intro {
             max-width: 1500px;
-
             margin: auto;
+            padding: 115px 7.5%;
         }
 
 
-        .service-grid {
-
+        .intro-grid {
             display: grid;
-
-            grid-template-columns:
-                1fr
-                1fr;
-
-            gap: 80px;
-
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
             align-items: center;
         }
 
 
-        .service-image {
-
-            position: relative;
-        }
-
-
-        .service-image img {
-
-            width: 100%;
-
-            height: 600px;
-
-            object-fit: cover;
-
-            display: block;
-        }
-
-
-        .image-label {
-
-            position: absolute;
-
-            right: -30px;
-
-            bottom: 35px;
-
-            width: 230px;
-
-            background: var(--lime);
-
-            padding: 30px;
-        }
-
-
-        .image-label strong {
-
-            display: block;
-
-            color: var(--green);
-
-            font-size: 35px;
-
-            margin-bottom: 8px;
-        }
-
-
-        .image-label span {
-
-            font-size: 13px;
-
-            font-weight: 900;
-
-            line-height: 1.5;
-        }
-
-
-        .service-content .eyebrow {
-
+        .intro-content .eyebrow,
+        .uses .eyebrow,
+        .process .eyebrow {
             color: var(--green);
         }
 
 
         h2 {
-
-            font-size:
-                clamp(
-                    40px,
-                    5vw,
-                    64px
-                );
-
-            line-height: 1.02;
-
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 1;
             letter-spacing: -3px;
-
-            margin:
-                0
-                0
-                30px;
+            margin: 0 0 30px;
         }
 
 
-        .service-content p {
-
+        .intro-content p {
             color: var(--gray);
-
             font-size: 17px;
-
             line-height: 1.8;
-
-            margin-bottom: 20px;
+            margin: 0 0 20px;
         }
 
 
-        .service-list {
-
-            display: grid;
-
-            grid-template-columns:
-                1fr
-                1fr;
-
-            gap: 15px;
-
-            margin-top: 35px;
+        .intro-image {
+            position: relative;
         }
 
 
-        .service-list-item {
-
-            background: var(--white);
-
-            padding: 20px;
-
-            font-size: 15px;
-
-            font-weight: 800;
+        .intro-image img {
+            width: 100%;
+            height: 620px;
+            display: block;
+            object-fit: cover;
         }
 
 
-        .service-list-item span {
+        .intro-box {
+            position: absolute;
+            left: -40px;
+            bottom: 40px;
+            width: 260px;
+            padding: 35px;
+            background: var(--lime);
+        }
 
+
+        .intro-box small {
+            display: block;
             color: var(--green);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1.7px;
+            margin-bottom: 15px;
+        }
 
-            margin-right: 8px;
+
+        .intro-box strong {
+            display: block;
+            color: var(--dark-green);
+            font-size: 34px;
+            line-height: 1;
+            letter-spacing: -1.5px;
         }
 
 
 
         /* =================================
-           BIN USES
+           USE CASES
         ================================= */
 
 
-        .uses-section {
+        .uses {
+            background: var(--white);
+            padding: 110px 7.5%;
+        }
 
-            padding:
-                20px
-                7.5%
-                110px;
 
+        .uses-inner {
             max-width: 1500px;
-
             margin: auto;
         }
 
 
-        .uses-section .eyebrow {
-
-            color: var(--green);
-        }
-
-
-        .uses-header {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-end;
-
-            gap: 50px;
-
-            margin-bottom: 55px;
-        }
-
-
-        .uses-header p {
-
-            color: var(--gray);
-
-            line-height: 1.8;
-
-            max-width: 430px;
-
-            margin: 0;
+        .uses-heading {
+            max-width: 850px;
+            margin-bottom: 60px;
         }
 
 
         .uses-grid {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
 
         .use-card {
-
-            background: var(--white);
-
-            padding: 35px;
-
-            min-height: 285px;
-
-            border-bottom:
-                4px solid transparent;
-
+            background: var(--cream);
+            padding: 38px;
+            min-height: 350px;
+            border-bottom: 4px solid transparent;
             transition: 0.25s;
         }
 
 
         .use-card:hover {
-
-            transform:
-                translateY(-7px);
-
+            transform: translateY(-7px);
             border-color: var(--lime);
-
-            box-shadow:
-                0 18px 40px
-                rgba(20, 51, 39, 0.09);
+            box-shadow: 0 18px 40px rgba(20, 51, 39, 0.09);
         }
 
 
         .use-number {
-
             color: #8b9690;
-
             font-size: 12px;
-
             font-weight: 900;
         }
 
 
         .use-icon {
-
-            width: 60px;
-
-            height: 60px;
-
+            width: 62px;
+            height: 62px;
             border-radius: 50%;
-
             display: grid;
-
             place-items: center;
-
             background: #edf4d0;
-
             color: var(--green);
-
-            font-size: 25px;
-
-            margin: 25px 0;
+            font-size: 26px;
+            margin: 30px 0;
         }
 
 
         .use-card h3 {
-
-            font-size: 21px;
-
-            margin:
-                0
-                0
-                12px;
+            font-size: 24px;
+            margin: 0 0 15px;
         }
 
 
         .use-card p {
-
+            margin: 0;
             color: var(--gray);
+            line-height: 1.75;
+        }
 
-            line-height: 1.7;
 
-            font-size: 15px;
+
+        /* =================================
+           FEATURE SECTION
+        ================================= */
+
+
+        .feature {
+            background: var(--green);
+            color: var(--white);
+            padding: 110px 7.5%;
+        }
+
+
+        .feature-inner {
+            max-width: 1500px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+
+        .feature .eyebrow {
+            color: var(--lime);
+        }
+
+
+        .feature p {
+            color: #cfddd7;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        .feature-list {
+            display: grid;
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+
+        .feature-item {
+            background: var(--green);
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        .feature-item span {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            border-radius: 50%;
+            background: var(--lime);
+            color: var(--dark-green);
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+        }
+
+
+        .feature-item strong {
+            font-size: 16px;
         }
 
 
@@ -578,205 +673,121 @@
 
 
         .process {
-
-            background: var(--green);
-
-            color: var(--white);
-
-            padding: 105px 7.5%;
+            padding: 110px 7.5%;
         }
 
 
         .process-inner {
-
             max-width: 1500px;
-
             margin: auto;
         }
 
 
-        .process .eyebrow {
-
-            color: var(--lime);
+        .process-heading {
+            max-width: 850px;
+            margin-bottom: 60px;
         }
 
 
-        .process h2 {
-
-            max-width: 760px;
-        }
-
-
-        .steps {
-
+        .process-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 1px;
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.15
-                );
-
-            margin-top: 55px;
+            background: var(--border);
         }
 
 
-        .step {
-
-            background: var(--green);
-
-            padding: 42px;
+        .process-card {
+            background: var(--cream);
+            padding: 50px 42px;
+            min-height: 350px;
         }
 
 
-        .step span {
-
-            font-size: 52px;
-
+        .process-card span {
+            color: var(--green);
+            font-size: 58px;
             font-weight: 900;
-
-            color: var(--lime);
+            line-height: 1;
         }
 
 
-        .step h3 {
-
-            font-size: 23px;
-
-            margin:
-                25px
-                0
-                15px;
+        .process-card h3 {
+            margin: 28px 0 16px;
+            font-size: 24px;
         }
 
 
-        .step p {
-
-            color: #cfddd7;
-
-            line-height: 1.7;
-
+        .process-card p {
             margin: 0;
+            color: var(--gray);
+            line-height: 1.75;
         }
 
 
 
         /* =================================
-           WHY CHOOSE US
+           AREA
         ================================= */
 
 
-        .why-section {
-
+        .area {
+            background: var(--white);
             padding: 110px 7.5%;
+        }
 
+
+        .area-inner {
             max-width: 1500px;
-
             margin: auto;
-        }
-
-
-        .why-section .eyebrow {
-
-            color: var(--green);
-        }
-
-
-        .why-grid {
-
             display: grid;
-
-            grid-template-columns:
-                1fr
-                1fr;
-
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 80px;
-
             align-items: center;
         }
 
 
-        .why-content p {
-
-            color: var(--gray);
-
-            font-size: 17px;
-
-            line-height: 1.8;
-        }
-
-
-        .why-points {
-
-            display: grid;
-
-            gap: 1px;
-
-            background: #d7ddd7;
-        }
-
-
-        .why-point {
-
-            background: var(--white);
-
-            padding: 28px;
-
-            display: flex;
-
-            align-items: flex-start;
-
-            gap: 20px;
-        }
-
-
-        .why-point span {
-
-            min-width: 45px;
-
-            height: 45px;
-
-            border-radius: 50%;
-
-            background: #edf4d0;
-
+        .area .eyebrow {
             color: var(--green);
-
-            display: grid;
-
-            place-items: center;
-
-            font-weight: 900;
         }
 
 
-        .why-point h3 {
-
-            margin:
-                0
-                0
-                8px;
-
-            font-size: 19px;
-        }
-
-
-        .why-point p {
-
-            margin: 0;
-
+        .area p {
             color: var(--gray);
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 700px;
+        }
 
-            line-height: 1.6;
 
-            font-size: 14px;
+        .area-box {
+            background: var(--lime);
+            padding: 55px;
+        }
+
+
+        .area-box small {
+            display: block;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+
+        .area-box strong {
+            display: block;
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 0.93;
+            letter-spacing: -4px;
+        }
+
+
+        .area-box p {
+            color: var(--dark-green);
+            font-size: 15px;
+            margin: 25px 0 0;
         }
 
 
@@ -787,52 +798,252 @@
 
 
         .cta {
-
             background: var(--lime);
+            padding: 80px 7.5%;
+        }
 
-            padding: 75px 7.5%;
 
+        .cta-inner {
+            max-width: 1500px;
+            margin: auto;
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            gap: 35px;
+            gap: 40px;
         }
 
 
         .cta h2 {
-
             margin: 0;
-
-            max-width: 780px;
+            max-width: 850px;
         }
 
 
-        .dark-btn {
-
+        .cta-btn {
             display: inline-block;
-
             background: var(--dark-green);
-
             color: var(--white);
-
-            padding:
-                18px
-                28px;
-
+            padding: 19px 29px;
             font-size: 13px;
-
             font-weight: 900;
-
             white-space: nowrap;
         }
 
 
-        #footer {
 
-            min-height: 200px;
+        /* =================================
+           FOOTER
+        ================================= */
+
+
+        .site-footer {
+            background: var(--dark-green);
+            color: var(--white);
+        }
+
+
+        .footer-main {
+            max-width: 1500px;
+            margin: auto;
+            padding: 80px 7.5% 65px;
+            display: grid;
+            grid-template-columns: 1.5fr 0.8fr 0.9fr 1fr;
+            gap: 65px;
+        }
+
+
+        .footer-brand {
+            max-width: 390px;
+        }
+
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+
+        .footer-logo-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--lime);
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+
+
+        .footer-logo-icon::before {
+            content: "";
+            width: 21px;
+            height: 18px;
+            border: 3px solid var(--dark-green);
+            border-top: 0;
+        }
+
+
+        .footer-logo-icon::after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background: var(--dark-green);
+            top: 14px;
+        }
+
+
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .footer-logo-text strong {
+            font-size: 21px;
+            font-weight: 900;
+        }
+
+
+        .footer-logo-text span {
+            margin-top: 5px;
+            color: var(--lime);
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1.7px;
+        }
+
+
+        .footer-description {
+            color: #cbd8d2;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0 0 30px;
+        }
+
+
+        .footer-quote {
+            display: inline-block;
+            background: var(--lime);
+            color: var(--dark-green);
+            padding: 16px 23px;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+
+        .footer-column h3 {
+            margin: 0 0 27px;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+        }
+
+
+        .footer-column h3::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 2px;
+            margin-top: 12px;
+            background: var(--lime);
+        }
+
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+
+        .footer-links a {
+            color: #cbd8d2;
+            font-size: 14px;
+        }
+
+
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+
+
+        .footer-contact {
+            display: grid;
+            gap: 22px;
+        }
+
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+
+        .footer-contact-icon {
+            min-width: 38px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(217, 242, 79, 0.12);
+            color: var(--lime);
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+        }
+
+
+        .footer-contact-item small {
+            display: block;
+            margin-bottom: 5px;
+            color: #8fa69c;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+        }
+
+
+        .footer-contact-item a,
+        .footer-contact-item strong {
+            color: #cbd8d2;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+        }
+
+
+        .footer-bottom-inner {
+            max-width: 1500px;
+            margin: auto;
+            padding: 25px 7.5%;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+
+        .footer-bottom p {
+            margin: 0;
+            color: #8fa69c;
+            font-size: 12px;
+        }
+
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+        }
+
+
+        .footer-bottom-links a {
+            color: #8fa69c;
+            font-size: 12px;
         }
 
 
@@ -842,33 +1053,93 @@
         ================================= */
 
 
-        @media (max-width: 1000px) {
+        @media (max-width: 1050px) {
 
-            .service-grid,
-            .why-grid {
+            .menu-toggle {
+                display: flex;
+            }
 
+
+            .header-cta {
+                display: none;
+            }
+
+
+            .main-nav {
+                position: absolute;
+                top: 84px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 15px 6% 30px;
+                box-shadow: 0 20px 40px rgba(13, 52, 39, 0.12);
+            }
+
+
+            .main-nav.open {
+                display: flex;
+            }
+
+
+            .main-nav > a {
+                padding: 17px 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+
+            .dropdown {
+                width: 100%;
+                border-bottom: 1px solid var(--border);
+            }
+
+
+            .dropdown-button {
+                justify-content: space-between;
+                padding: 17px 0;
+            }
+
+
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border-top: 0;
+                padding: 0 0 12px 15px;
+            }
+
+
+            .dropdown.mobile-open .dropdown-menu {
+                display: block;
+            }
+
+
+            .intro-grid,
+            .feature-inner,
+            .area-inner {
                 grid-template-columns: 1fr;
             }
 
 
-            .uses-header {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-            }
-
-
             .uses-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
 
-            .image-label {
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
 
-                right: 20px;
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
             }
 
         }
@@ -882,78 +1153,108 @@
 
         @media (max-width: 650px) {
 
+            .site-header {
+                height: 76px;
+            }
+
+
+            .header-container {
+                padding: 0 5%;
+            }
+
+
+            .main-nav {
+                top: 76px;
+            }
+
+
+            .logo-icon {
+                width: 43px;
+                height: 43px;
+            }
+
+
+            .logo-text strong {
+                font-size: 17px;
+            }
+
+
             .service-hero {
-
-                min-height: 550px;
-
-                padding:
-                    70px
-                    6%;
+                min-height: 620px;
+                padding: 80px 6%;
             }
 
 
             h1 {
-
-                font-size: 52px;
-
+                font-size: 55px;
                 letter-spacing: -3px;
             }
 
 
-            .service-about,
+            .intro,
+            .uses,
+            .feature,
             .process,
-            .why-section {
-
-                padding:
-                    75px
-                    6%;
+            .area {
+                padding: 75px 6%;
             }
 
 
-            .uses-section {
-
-                padding:
-                    10px
-                    6%
-                    75px;
-            }
-
-
-            .service-image img {
-
+            .intro-image img {
                 height: 430px;
             }
 
 
-            .image-label {
-
+            .intro-box {
                 position: relative;
-
-                right: auto;
-
+                left: auto;
                 bottom: auto;
-
                 width: 100%;
             }
 
 
-            .service-list,
             .uses-grid,
-            .steps {
-
+            .process-grid {
                 grid-template-columns: 1fr;
             }
 
 
+            .feature-item {
+                padding: 24px;
+            }
+
+
+            .area-box {
+                padding: 40px 30px;
+            }
+
+
             .cta {
+                padding: 60px 6%;
+            }
 
-                padding:
-                    55px
-                    6%;
 
+            .cta-inner {
                 flex-direction: column;
-
                 align-items: flex-start;
+            }
+
+
+            .footer-main {
+                padding: 65px 6% 50px;
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+
+            .footer-bottom-inner {
+                padding: 25px 6%;
+                flex-direction: column;
+            }
+
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
             }
 
         }
@@ -969,46 +1270,183 @@
     <!-- HEADER -->
 
 
-    <div id="header"></div>
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <a href="index.html" class="site-logo">
+
+                <div class="logo-icon"></div>
+
+
+                <div class="logo-text">
+
+                    <strong>
+                        ABC BIN RENTAL
+                    </strong>
+
+                    <span>
+                        EDMONTON · ALBERTA
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <nav class="main-nav">
+
+
+                <a href="index.html">
+                    HOME
+                </a>
+
+
+                <a href="about.html">
+                    ABOUT
+                </a>
+
+
+
+                <div class="dropdown">
+
+                    <div class="dropdown-button">
+
+                        SERVICES
+
+                        <span class="dropdown-arrow">
+                            ▼
+                        </span>
+
+                    </div>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="service.html">
+                            All Services
+                        </a>
+
+                        <a href="service-one.html">
+                            Bin Rental
+                        </a>
+
+                        <a href="service-two.html">
+                            Cleaning Services
+                        </a>
+
+                        <a href="service-three.html">
+                            Junk Removal
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="dropdown">
+
+                    <div class="dropdown-button">
+
+                        PROJECTS
+
+                        <span class="dropdown-arrow">
+                            ▼
+                        </span>
+
+                    </div>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="projects.html">
+                            All Projects
+                        </a>
+
+                        <a href="project-one.html">
+                            Project One
+                        </a>
+
+                        <a href="project-two.html">
+                            Project Two
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="contact.html">
+                    CONTACT US
+                </a>
+
+
+            </nav>
+
+
+
+            <a href="contact.html" class="header-cta">
+                GET A FREE QUOTE
+            </a>
+
+
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+        </div>
+
+    </header>
 
 
 
     <main>
 
 
-        <!-- =================================
-             HERO
-        ================================= -->
+        <!-- HERO -->
 
 
         <section class="service-hero">
-
 
             <div class="hero-content">
 
 
                 <div class="eyebrow">
 
-                    BIN RENTAL EDMONTON
+                    BIN RENTAL · EDMONTON
 
                 </div>
 
 
                 <h1>
 
-                    THE RIGHT BIN.<br>
+                    ONE BIN.<br>
 
-                    FOR THE JOB.
+                    MORE SPACE.
 
                 </h1>
 
 
                 <p>
 
-                    Reliable bin rental solutions for
-                    home cleanouts, renovations and
-                    project debris across Edmonton,
-                    Alberta.
+                    Practical bin rental services for
+                    Edmonton home cleanouts, renovation
+                    projects, property cleanup and
+                    general project debris.
 
                 </p>
 
@@ -1017,21 +1455,21 @@
 
 
                     <a
-                        class="primary-btn"
                         href="contact.html"
+                        class="primary-btn"
                     >
 
-                        GET A FREE QUOTE
+                        REQUEST A BIN QUOTE
 
                     </a>
 
 
                     <a
+                        href="#how-it-works"
                         class="outline-btn"
-                        href="tel:0000000000"
                     >
 
-                        CALL 0000000000
+                        HOW IT WORKS
 
                     </a>
 
@@ -1041,145 +1479,97 @@
 
             </div>
 
-
         </section>
 
 
 
-        <!-- =================================
-             ABOUT BIN RENTAL
-        ================================= -->
+        <!-- INTRO -->
 
 
-        <section class="service-about">
+        <section class="intro">
+
+            <div class="intro-grid">
 
 
-            <div class="service-grid">
-
-
-                <div class="service-image">
-
-
-                    <img
-                        src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=85"
-                        alt="Bin rental services Edmonton"
-                    >
-
-
-                    <div class="image-label">
-
-
-                        <strong>
-
-                            ABC
-
-                        </strong>
-
-
-                        <span>
-
-                            RELIABLE BIN RENTAL
-                            IN EDMONTON
-
-                        </span>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="service-content">
+                <div class="intro-content">
 
 
                     <div class="eyebrow">
 
-                        BIN RENTAL SERVICE
+                        BIN RENTAL SERVICES
 
                     </div>
 
 
                     <h2>
 
-                        A SIMPLE WAY
-                        TO HANDLE
-                        PROJECT WASTE.
+                        KEEP YOUR
+                        CLEANUP ORGANIZED.
 
                     </h2>
 
 
                     <p>
 
-                        Cleanup projects can quickly
-                        create more waste than expected.
-                        ABC Bin Rental provides practical
-                        bin rental services designed to
-                        make waste management easier.
+                        When debris and unwanted material
+                        begin to build up, a rental bin
+                        gives your project one practical
+                        place to manage the mess.
 
                     </p>
 
 
                     <p>
 
-                        Whether you are clearing your
-                        home, working on a renovation or
-                        managing project debris, our bin
-                        rental service gives you a
-                        convenient place to collect and
-                        manage waste.
+                        ABC Bin Rental provides bin rental
+                        services for Edmonton homeowners,
+                        contractors, property owners and
+                        businesses working on cleanup and
+                        improvement projects.
 
                     </p>
 
 
                     <p>
 
-                        We serve homeowners, contractors
-                        and businesses throughout
-                        Edmonton, Alberta.
+                        Tell us about your project and the
+                        type of material you need to
+                        clear. We can discuss your bin
+                        rental requirements and service
+                        scheduling.
 
                     </p>
 
 
-
-                    <div class="service-list">
-
-
-                        <div class="service-list-item">
-
-                            <span>✓</span>
-
-                            Home Cleanouts
-
-                        </div>
+                </div>
 
 
-                        <div class="service-list-item">
 
-                            <span>✓</span>
-
-                            Renovation Debris
-
-                        </div>
+                <div class="intro-image">
 
 
-                        <div class="service-list-item">
-
-                            <span>✓</span>
-
-                            Construction Projects
-
-                        </div>
+                    <img
+                        src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85"
+                        alt="Bin rental for Edmonton cleanup projects"
+                    >
 
 
-                        <div class="service-list-item">
+                    <div class="intro-box">
 
-                            <span>✓</span>
 
-                            Property Cleanup
+                        <small>
 
-                        </div>
+                            PRACTICAL CLEANUP
+
+                        </small>
+
+
+                        <strong>
+
+                            CLEAR THE
+                            PROJECT SPACE.
+
+                        </strong>
 
 
                     </div>
@@ -1190,20 +1580,183 @@
 
             </div>
 
+        </section>
+
+
+
+        <!-- USE CASES -->
+
+
+        <section class="uses">
+
+            <div class="uses-inner">
+
+
+                <div class="uses-heading">
+
+
+                    <div class="eyebrow">
+
+                        WHEN TO RENT A BIN
+
+                    </div>
+
+
+                    <h2>
+
+                        BUILT FOR REAL
+                        CLEANUP PROJECTS.
+
+                    </h2>
+
+
+                </div>
+
+
+
+                <div class="uses-grid">
+
+
+                    <article class="use-card">
+
+
+                        <span class="use-number">
+                            01
+                        </span>
+
+
+                        <div class="use-icon">
+                            ⌂
+                        </div>
+
+
+                        <h3>
+                            Home Cleanouts
+                        </h3>
+
+
+                        <p>
+
+                            Manage unwanted materials and
+                            general household cleanup in
+                            one organized location.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="use-card">
+
+
+                        <span class="use-number">
+                            02
+                        </span>
+
+
+                        <div class="use-icon">
+                            ◫
+                        </div>
+
+
+                        <h3>
+                            Renovations
+                        </h3>
+
+
+                        <p>
+
+                            Keep renovation debris
+                            organized while your Edmonton
+                            improvement project moves
+                            forward.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="use-card">
+
+
+                        <span class="use-number">
+                            03
+                        </span>
+
+
+                        <div class="use-icon">
+                            ⌖
+                        </div>
+
+
+                        <h3>
+                            Property Cleanup
+                        </h3>
+
+
+                        <p>
+
+                            A practical solution for
+                            property clearing and general
+                            cleanup projects.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="use-card">
+
+
+                        <span class="use-number">
+                            04
+                        </span>
+
+
+                        <div class="use-icon">
+                            ↗
+                        </div>
+
+
+                        <h3>
+                            Project Debris
+                        </h3>
+
+
+                        <p>
+
+                            Create a central place for
+                            suitable debris generated
+                            during cleanup and project
+                            work.
+
+                        </p>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
 
         </section>
 
 
 
-        <!-- =================================
-             BIN USES
-        ================================= -->
+        <!-- FEATURES -->
 
 
-        <section class="uses-section">
+        <section class="feature">
 
-
-            <div class="uses-header">
+            <div class="feature-inner">
 
 
                 <div>
@@ -1211,15 +1764,132 @@
 
                     <div class="eyebrow">
 
-                        COMMON BIN RENTAL USES
+                        WHY BIN RENTAL
 
                     </div>
 
 
                     <h2>
 
-                        ONE BIN.
-                        MANY PROJECTS.
+                        ONE PLACE
+                        FOR THE MESS.
+
+                    </h2>
+
+
+                    <p>
+
+                        Moving debris into one dedicated
+                        bin can help keep a project space
+                        more organized and easier to
+                        manage.
+
+                    </p>
+
+
+                    <p>
+
+                        Instead of allowing materials to
+                        collect throughout a property,
+                        you have a central cleanup point
+                        during your project.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="feature-list">
+
+
+                    <div class="feature-item">
+
+                        <span>✓</span>
+
+                        <strong>
+
+                            Organized project cleanup
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <span>✓</span>
+
+                        <strong>
+
+                            Practical for home cleanouts
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <span>✓</span>
+
+                        <strong>
+
+                            Suitable for renovation projects
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <span>✓</span>
+
+                        <strong>
+
+                            Local Edmonton service
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROCESS -->
+
+
+        <section
+            class="process"
+            id="how-it-works"
+        >
+
+            <div class="process-inner">
+
+
+                <div class="process-heading">
+
+
+                    <div class="eyebrow">
+
+                        HOW BIN RENTAL WORKS
+
+                    </div>
+
+
+                    <h2>
+
+                        THREE STEPS.
+                        LESS MESS.
 
                     </h2>
 
@@ -1227,213 +1897,15 @@
                 </div>
 
 
-                <p>
 
-                    Our bin rental services are suitable
-                    for different cleanup and project
-                    needs throughout Edmonton.
+                <div class="process-grid">
 
-                </p>
 
-
-            </div>
-
-
-
-            <div class="uses-grid">
-
-
-                <article class="use-card">
-
-
-                    <span class="use-number">
-
-                        01
-
-                    </span>
-
-
-                    <div class="use-icon">
-
-                        ⌂
-
-                    </div>
-
-
-                    <h3>
-
-                        Home Cleanouts
-
-                    </h3>
-
-
-                    <p>
-
-                        Clear household clutter and
-                        unwanted materials during a
-                        major home cleanup.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <article class="use-card">
-
-
-                    <span class="use-number">
-
-                        02
-
-                    </span>
-
-
-                    <div class="use-icon">
-
-                        ◫
-
-                    </div>
-
-
-                    <h3>
-
-                        Renovations
-
-                    </h3>
-
-
-                    <p>
-
-                        Manage renovation debris and
-                        materials while improving your
-                        Edmonton property.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <article class="use-card">
-
-
-                    <span class="use-number">
-
-                        03
-
-                    </span>
-
-
-                    <div class="use-icon">
-
-                        ⚒
-
-                    </div>
-
-
-                    <h3>
-
-                        Construction
-
-                    </h3>
-
-
-                    <p>
-
-                        Keep project debris organized
-                        and help maintain a cleaner
-                        work area.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <article class="use-card">
-
-
-                    <span class="use-number">
-
-                        04
-
-                    </span>
-
-
-                    <div class="use-icon">
-
-                        ↗
-
-                    </div>
-
-
-                    <h3>
-
-                        Property Cleanup
-
-                    </h3>
-
-
-                    <p>
-
-                        A practical waste solution for
-                        residential and property cleanup
-                        projects.
-
-                    </p>
-
-
-                </article>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================
-             PROCESS
-        ================================= -->
-
-
-        <section class="process">
-
-
-            <div class="process-inner">
-
-
-                <div class="eyebrow">
-
-                    HOW BIN RENTAL WORKS
-
-                </div>
-
-
-                <h2>
-
-                    SIMPLE SERVICE
-                    FROM START TO FINISH.
-
-                </h2>
-
-
-
-                <div class="steps">
-
-
-                    <div class="step">
+                    <article class="process-card">
 
 
                         <span>
-
                             01
-
                         </span>
 
 
@@ -1446,74 +1918,70 @@
 
                         <p>
 
-                            Contact ABC Bin Rental and
-                            tell us about your cleanup,
-                            renovation or project needs.
+                            Share your Edmonton location,
+                            project type and general
+                            cleanup requirements.
 
                         </p>
 
 
-                    </div>
+                    </article>
 
 
 
-                    <div class="step">
+                    <article class="process-card">
 
 
                         <span>
-
                             02
-
                         </span>
 
 
                         <h3>
 
-                            Schedule Your Bin
+                            Discuss Your Bin Needs
 
                         </h3>
 
 
                         <p>
 
-                            Choose a suitable service
-                            schedule for your Edmonton
-                            project.
+                            Tell us what you are clearing
+                            and discuss the practical bin
+                            rental needs for your project.
 
                         </p>
 
 
-                    </div>
+                    </article>
 
 
 
-                    <div class="step">
+                    <article class="process-card">
 
 
                         <span>
-
                             03
-
                         </span>
 
 
                         <h3>
 
-                            Complete Your Cleanup
+                            Schedule Your Service
 
                         </h3>
 
 
                         <p>
 
-                            Use your bin to manage
-                            project waste and move your
-                            cleanup forward.
+                            Arrange your bin rental
+                            service and start organizing
+                            your cleanup project.
 
                         </p>
 
 
-                    </div>
+                    </article>
 
 
                 </div>
@@ -1521,56 +1989,53 @@
 
             </div>
 
-
         </section>
 
 
 
-        <!-- =================================
-             WHY CHOOSE US
-        ================================= -->
+        <!-- AREA -->
 
 
-        <section class="why-section">
+        <section class="area">
+
+            <div class="area-inner">
 
 
-            <div class="why-grid">
-
-
-                <div class="why-content">
+                <div>
 
 
                     <div class="eyebrow">
 
-                        WHY ABC BIN RENTAL
+                        LOCAL BIN RENTAL
 
                     </div>
 
 
                     <h2>
 
-                        BIN RENTAL
-                        MADE LESS
-                        COMPLICATED.
+                        BIN RENTAL FOR
+                        EDMONTON PROJECTS.
 
                     </h2>
 
 
                     <p>
 
-                        Our goal is to make the bin
-                        rental process straightforward
-                        for Edmonton customers.
+                        ABC Bin Rental provides practical
+                        bin rental solutions for
+                        residential, property and project
+                        cleanup needs in Edmonton,
+                        Alberta.
 
                     </p>
 
 
                     <p>
 
-                        We focus on practical service,
-                        clear communication and cleanup
-                        solutions designed around
-                        different project needs.
+                        Contact us with your project
+                        details to discuss your cleanup
+                        requirements and bin rental
+                        service.
 
                     </p>
 
@@ -1579,113 +2044,32 @@
 
 
 
-                <div class="why-points">
+                <div class="area-box">
 
 
-                    <div class="why-point">
+                    <small>
+
+                        SERVICE AREA
+
+                    </small>
 
 
-                        <span>
+                    <strong>
 
-                            01
+                        EDMONTON,<br>
 
-                        </span>
+                        ALBERTA.
 
-
-                        <div>
-
-
-                            <h3>
-
-                                Edmonton Service
-
-                            </h3>
+                    </strong>
 
 
-                            <p>
+                    <p>
 
-                                Local bin rental support
-                                for Edmonton projects.
+                        Local bin rental solutions for
+                        cleanouts, renovations and
+                        property projects.
 
-                            </p>
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="why-point">
-
-
-                        <span>
-
-                            02
-
-                        </span>
-
-
-                        <div>
-
-
-                            <h3>
-
-                                Simple Process
-
-                            </h3>
-
-
-                            <p>
-
-                                Straightforward service
-                                from your first contact
-                                through your cleanup.
-
-                            </p>
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="why-point">
-
-
-                        <span>
-
-                            03
-
-                        </span>
-
-
-                        <div>
-
-
-                            <h3>
-
-                                Flexible Project Uses
-
-                            </h3>
-
-
-                            <p>
-
-                                Practical solutions for
-                                cleanouts, renovations
-                                and project debris.
-
-                            </p>
-
-
-                        </div>
-
-
-                    </div>
+                    </p>
 
 
                 </div>
@@ -1693,36 +2077,37 @@
 
             </div>
 
-
         </section>
 
 
 
-        <!-- =================================
-             CTA
-        ================================= -->
+        <!-- CTA -->
 
 
         <section class="cta">
 
-
-            <h2>
-
-                NEED A BIN FOR
-                YOUR EDMONTON PROJECT?
-
-            </h2>
+            <div class="cta-inner">
 
 
-            <a
-                class="dark-btn"
-                href="contact.html"
-            >
+                <h2>
 
-                REQUEST A FREE QUOTE
+                    NEED A BIN FOR
+                    YOUR CLEANUP PROJECT?
 
-            </a>
+                </h2>
 
+
+                <a
+                    href="contact.html"
+                    class="cta-btn"
+                >
+
+                    REQUEST YOUR BIN QUOTE
+
+                </a>
+
+
+            </div>
 
         </section>
 
@@ -1734,119 +2119,361 @@
     <!-- FOOTER -->
 
 
-    <div id="footer"></div>
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+
+            <div class="footer-brand">
+
+
+                <a
+                    href="index.html"
+                    class="footer-logo"
+                >
+
+                    <div class="footer-logo-icon"></div>
+
+
+                    <div class="footer-logo-text">
+
+                        <strong>
+                            ABC BIN RENTAL
+                        </strong>
+
+                        <span>
+                            EDMONTON · ALBERTA
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <p class="footer-description">
+
+                    Practical bin rental, cleaning and
+                    junk removal services for homeowners,
+                    contractors, property owners and
+                    businesses across Edmonton, Alberta.
+
+                </p>
+
+
+                <a
+                    href="contact.html"
+                    class="footer-quote"
+                >
+
+                    GET A FREE QUOTE
+
+                </a>
+
+
+            </div>
 
 
 
-    <!-- =================================
-         JAVASCRIPT
-    ================================= -->
+            <div class="footer-column">
+
+
+                <h3>
+                    QUICK LINKS
+                </h3>
+
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="about.html">
+                        About Us
+                    </a>
+
+                    <a href="service.html">
+                        Services
+                    </a>
+
+                    <a href="projects.html">
+                        Projects
+                    </a>
+
+                    <a href="contact.html">
+                        Contact Us
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+
+                <h3>
+                    OUR SERVICES
+                </h3>
+
+
+                <div class="footer-links">
+
+                    <a href="service-one.html">
+                        Bin Rental
+                    </a>
+
+                    <a href="service-two.html">
+                        Cleaning Services
+                    </a>
+
+                    <a href="service-three.html">
+                        Junk Removal
+                    </a>
+
+                    <a href="contact.html">
+                        Request a Quote
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+
+                <h3>
+                    CONTACT US
+                </h3>
+
+
+                <div class="footer-contact">
+
+
+                    <div class="footer-contact-item">
+
+                        <div class="footer-contact-icon">
+                            ☎
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                PHONE
+                            </small>
+
+                            <a href="tel:0000000000">
+                                0000000000
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="footer-contact-item">
+
+                        <div class="footer-contact-icon">
+                            @
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                EMAIL
+                            </small>
+
+                            <a href="mailto:binrental@gmail.com">
+                                binrental@gmail.com
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="footer-contact-item">
+
+                        <div class="footer-contact-icon">
+                            ⌖
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                SERVICE AREA
+                            </small>
+
+                            <strong>
+                                Edmonton, Alberta
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <div class="footer-bottom-inner">
+
+
+                <p>
+
+                    © <span id="footerYear"></span>
+                    ABC Bin Rental. All rights reserved.
+
+                </p>
+
+
+                <div class="footer-bottom-links">
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="service.html">
+                        Services
+                    </a>
+
+                    <a href="index.html">
+                        Edmonton, Alberta
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
 
 
     <script>
 
-        async function loadSection(id, file) {
-
-            try {
-
-                const response =
-                    await fetch("./" + file);
+        const menuButton =
+            document.querySelector(
+                ".menu-toggle"
+            );
 
 
-                if (!response.ok) {
+        const navigation =
+            document.querySelector(
+                ".main-nav"
+            );
 
-                    throw new Error(
-                        "HTTP error: "
-                        + response.status
+
+        const dropdowns =
+            document.querySelectorAll(
+                ".dropdown"
+            );
+
+
+        if (
+            menuButton &&
+            navigation
+        ) {
+
+            menuButton.addEventListener(
+                "click",
+                function () {
+
+                    navigation.classList.toggle(
+                        "open"
+                    );
+
+
+                    menuButton.classList.toggle(
+                        "active"
+                    );
+
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        navigation.classList.contains(
+                            "open"
+                        )
                     );
 
                 }
-
-
-                const content =
-                    await response.text();
-
-
-                document
-                    .getElementById(id)
-                    .innerHTML = content;
-
-
-
-                if (id === "header") {
-
-                    const button =
-                        document.querySelector(
-                            ".menu-toggle"
-                        );
-
-
-                    const nav =
-                        document.querySelector(
-                            ".main-nav"
-                        );
-
-
-                    if (button && nav) {
-
-                        button.addEventListener(
-
-                            "click",
-
-                            function () {
-
-                                nav.classList.toggle(
-                                    "open"
-                                );
-
-                            }
-
-                        );
-
-                    }
-
-                }
-
-            }
-
-
-            catch (error) {
-
-                console.error(
-
-                    "Unable to load "
-                    + file,
-
-                    error
-
-                );
-
-            }
+            );
 
         }
 
 
 
-        document.addEventListener(
+        dropdowns.forEach(
+            function (dropdown) {
 
-            "DOMContentLoaded",
-
-            function () {
-
-                loadSection(
-                    "header",
-                    "header.html"
-                );
+                const button =
+                    dropdown.querySelector(
+                        ".dropdown-button"
+                    );
 
 
-                loadSection(
-                    "footer",
-                    "footer.html"
-                );
+                if (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            if (
+                                window.innerWidth <= 1050
+                            ) {
+
+                                dropdown.classList.toggle(
+                                    "mobile-open"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
 
             }
-
         );
+
+
+
+        const footerYear =
+            document.getElementById(
+                "footerYear"
+            );
+
+
+        if (footerYear) {
+
+            footerYear.textContent =
+                new Date().getFullYear();
+
+        }
 
     </script>
 
