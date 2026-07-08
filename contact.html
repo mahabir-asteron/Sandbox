@@ -1,1 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact ABC Bin Rental for bin rental, cleaning and junk removal services in Edmonton, Alberta."
+    >
+
+    <title>
+        Contact Us | ABC Bin Rental Edmonton
+    </title>
+
+
+    <style>
+
+        :root {
+            --green: #174f3b;
+            --dark-green: #0d3427;
+            --lime: #d9f24f;
+            --cream: #f6f4ea;
+            --dark: #17241f;
+            --gray: #65716b;
+            --white: #ffffff;
+            --border: #d9ded8;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: var(--dark);
+
+            background: var(--cream);
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+
+        #header {
+            min-height: 84px;
+        }
+
+
+
+        /* =================================
+           HERO
+        ================================= */
+
+
+        .contact-hero {
+
+            min-height: 500px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 90px 7.5%;
+
+            color: var(--white);
+
+            position: relative;
+
+            overflow: hidden;
+
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(11, 45, 34, 0.98),
+                    rgba(18, 61, 46, 0.90),
+                    rgba(18, 61, 46, 0.46)
+                ),
+
+                url(
+                    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1900&q=85"
+                );
+
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .contact-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+
+            height: 430px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.12);
+
+            border-radius: 50%;
+
+            right: -110px;
+
+            bottom: -180px;
+
+
+            box-shadow:
+
+                0 0 0 70px
+                rgba(255, 255, 255, 0.03),
+
+                0 0 0 140px
+                rgba(255, 255, 255, 0.02);
+        }
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .eyebrow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 2.2px;
+
+            color: var(--lime);
+
+            margin-bottom: 22px;
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 35px;
+
+            height: 2px;
+
+            background: currentColor;
+        }
+
+
+        h1 {
+
+            font-size:
+                clamp(
+                    52px,
+                    7vw,
+                    90px
+                );
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            margin:
+                0
+                0
+                28px;
+        }
+
+
+        .contact-hero p {
+
+            max-width: 680px;
+
+            margin: 0;
+
+            color: #e2ece7;
+
+            font-size: 19px;
+
+            line-height: 1.75;
+        }
+
+
+
+        /* =================================
+           CONTACT SECTION
+        ================================= */
+
+
+        .contact-section {
+
+            max-width: 1500px;
+
+            margin: auto;
+
+            padding: 110px 7.5%;
+        }
+
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.85fr
+                1.15fr;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+
+        .contact-content .eyebrow {
+
+            color: var(--green);
+        }
+
+
+        h2 {
+
+            font-size:
+                clamp(
+                    40px,
+                    5vw,
+                    64px
+                );
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            margin:
+                0
+                0
+                30px;
+        }
+
+
+        .contact-intro {
+
+            color: var(--gray);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin:
+                0
+                0
+                45px;
+        }
+
+
+
+        /* =================================
+           CONTACT DETAILS
+        ================================= */
+
+
+        .contact-details {
+
+            display: grid;
+
+            gap: 1px;
+
+            background: var(--border);
+        }
+
+
+        .contact-item {
+
+            background: var(--white);
+
+            padding: 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+        }
+
+
+        .contact-icon {
+
+            min-width: 58px;
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            background: #edf4d0;
+
+            color: var(--green);
+
+            font-size: 23px;
+
+            font-weight: 900;
+        }
+
+
+        .contact-item small {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--gray);
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .contact-item strong {
+
+            display: block;
+
+            font-size: 18px;
+
+            line-height: 1.5;
+
+            word-break: break-word;
+        }
+
+
+        .contact-item a:hover {
+
+            color: var(--green);
+        }
+
+
+
+        /* =================================
+           CONTACT FORM
+        ================================= */
+
+
+        .form-card {
+
+            background: var(--white);
+
+            padding: 50px;
+
+            box-shadow:
+                0 20px 55px
+                rgba(20, 51, 39, 0.08);
+        }
+
+
+        .form-top {
+
+            margin-bottom: 35px;
+        }
+
+
+        .form-top span {
+
+            display: block;
+
+            color: var(--green);
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .form-top h3 {
+
+            margin:
+                0
+                0
+                15px;
+
+            font-size:
+                clamp(
+                    30px,
+                    4vw,
+                    45px
+                );
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+        }
+
+
+        .form-top p {
+
+            margin: 0;
+
+            color: var(--gray);
+
+            line-height: 1.7;
+        }
+
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 20px;
+        }
+
+
+        .form-group {
+
+            margin-bottom: 22px;
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: var(--dark);
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 0.8px;
+        }
+
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            border:
+                1px solid
+                var(--border);
+
+            outline: none;
+
+            background: #fbfcf9;
+
+            color: var(--dark);
+
+            padding: 16px 17px;
+
+            border-radius: 0;
+
+            transition: 0.2s;
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: var(--green);
+
+            background: var(--white);
+        }
+
+
+        .form-group textarea {
+
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+
+        .submit-btn {
+
+            width: 100%;
+
+            border: 0;
+
+            cursor: pointer;
+
+            background: var(--green);
+
+            color: var(--white);
+
+            padding: 19px 25px;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            letter-spacing: 0.5px;
+
+            transition: 0.2s;
+        }
+
+
+        .submit-btn:hover {
+
+            background: var(--dark-green);
+        }
+
+
+        .form-message {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 17px;
+
+            background: #edf4d0;
+
+            color: var(--green);
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            line-height: 1.6;
+        }
+
+
+
+        /* =================================
+           SERVICE AREA
+        ================================= */
+
+
+        .area-section {
+
+            background: var(--green);
+
+            color: var(--white);
+
+            padding: 105px 7.5%;
+        }
+
+
+        .area-inner {
+
+            max-width: 1500px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .area-section .eyebrow {
+
+            color: var(--lime);
+        }
+
+
+        .area-content p {
+
+            max-width: 600px;
+
+            margin: 0;
+
+            color: #cfddd7;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        .area-card {
+
+            background: var(--lime);
+
+            color: var(--dark);
+
+            padding: 50px;
+        }
+
+
+        .area-card small {
+
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: var(--green);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        .area-card strong {
+
+            display: block;
+
+            font-size:
+                clamp(
+                    38px,
+                    5vw,
+                    65px
+                );
+
+            line-height: 0.95;
+
+            letter-spacing: -3px;
+        }
+
+
+        .area-card p {
+
+            margin:
+                25px
+                0
+                0;
+
+            line-height: 1.7;
+        }
+
+
+
+        /* =================================
+           CTA
+        ================================= */
+
+
+        .cta {
+
+            background: var(--lime);
+
+            padding: 75px 7.5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 35px;
+        }
+
+
+        .cta h2 {
+
+            margin: 0;
+
+            max-width: 780px;
+        }
+
+
+        .dark-btn {
+
+            display: inline-block;
+
+            background: var(--dark-green);
+
+            color: var(--white);
+
+            padding:
+                18px
+                28px;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+
+        #footer {
+
+            min-height: 200px;
+        }
+
+
+
+        /* =================================
+           TABLET
+        ================================= */
+
+
+        @media (max-width: 1000px) {
+
+            .contact-grid,
+            .area-inner {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact-grid,
+            .area-inner {
+
+                gap: 55px;
+            }
+
+        }
+
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+
+        @media (max-width: 650px) {
+
+            .contact-hero {
+
+                min-height: 500px;
+
+                padding:
+                    70px
+                    6%;
+            }
+
+
+            h1 {
+
+                font-size: 52px;
+
+                letter-spacing: -3px;
+            }
+
+
+            .contact-section,
+            .area-section {
+
+                padding:
+                    75px
+                    6%;
+            }
+
+
+            .form-card {
+
+                padding: 30px 22px;
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+            }
+
+
+            .contact-item {
+
+                padding: 22px 18px;
+
+                gap: 15px;
+            }
+
+
+            .contact-icon {
+
+                min-width: 50px;
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+
+            .area-card {
+
+                padding: 35px 25px;
+            }
+
+
+            .cta {
+
+                padding:
+                    55px
+                    6%;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+
+    <div id="header"></div>
+
+
+
+    <main>
+
+
+        <!-- =================================
+             HERO
+        ================================= -->
+
+
+        <section class="contact-hero">
+
+
+            <div class="hero-content">
+
+
+                <div class="eyebrow">
+
+                    CONTACT ABC BIN RENTAL
+
+                </div>
+
+
+                <h1>
+
+                    LET'S TALK<br>
+
+                    ABOUT YOUR PROJECT.
+
+                </h1>
+
+
+                <p>
+
+                    Need bin rental, cleaning or junk
+                    removal services in Edmonton?
+                    Contact ABC Bin Rental and tell us
+                    what you need.
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             CONTACT
+        ================================= -->
+
+
+        <section class="contact-section">
+
+
+            <div class="contact-grid">
+
+
+                <!-- CONTACT INFORMATION -->
+
+
+                <div class="contact-content">
+
+
+                    <div class="eyebrow">
+
+                        GET IN TOUCH
+
+                    </div>
+
+
+                    <h2>
+
+                        READY TO CLEAR
+                        THE CLUTTER?
+
+                    </h2>
+
+
+                    <p class="contact-intro">
+
+                        Tell us about your cleanup or
+                        bin rental needs. Contact ABC
+                        Bin Rental for service information
+                        and a free quote in Edmonton,
+                        Alberta.
+
+                    </p>
+
+
+
+                    <div class="contact-details">
+
+
+                        <div class="contact-item">
+
+
+                            <div class="contact-icon">
+
+                                ☎
+
+                            </div>
+
+
+                            <div>
+
+
+                                <small>
+
+                                    PHONE
+
+                                </small>
+
+
+                                <strong>
+
+
+                                    <a href="tel:0000000000">
+
+                                        0000000000
+
+                                    </a>
+
+
+                                </strong>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="contact-item">
+
+
+                            <div class="contact-icon">
+
+                                @
+
+                            </div>
+
+
+                            <div>
+
+
+                                <small>
+
+                                    EMAIL
+
+                                </small>
+
+
+                                <strong>
+
+
+                                    <a href="mailto:binrental@gmail.com">
+
+                                        binrental@gmail.com
+
+                                    </a>
+
+
+                                </strong>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="contact-item">
+
+
+                            <div class="contact-icon">
+
+                                ⌖
+
+                            </div>
+
+
+                            <div>
+
+
+                                <small>
+
+                                    SERVICE AREA
+
+                                </small>
+
+
+                                <strong>
+
+                                    Edmonton, Alberta
+
+                                </strong>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- CONTACT FORM -->
+
+
+                <div class="form-card">
+
+
+                    <div class="form-top">
+
+
+                        <span>
+
+                            FREE QUOTE REQUEST
+
+                        </span>
+
+
+                        <h3>
+
+                            TELL US WHAT
+                            YOU NEED.
+
+                        </h3>
+
+
+                        <p>
+
+                            Complete the form below.
+                            Your email application will
+                            open with your project details.
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <form id="contactForm">
+
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+
+                                <label for="name">
+
+                                    YOUR NAME
+
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    required
+                                >
+
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+
+                                <label for="phone">
+
+                                    PHONE NUMBER
+
+                                </label>
+
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="Enter phone number"
+                                    required
+                                >
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+
+                            <label for="email">
+
+                                EMAIL ADDRESS
+
+                            </label>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter email address"
+                                required
+                            >
+
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+
+                            <label for="service">
+
+                                SERVICE NEEDED
+
+                            </label>
+
+
+                            <select
+                                id="service"
+                                name="service"
+                                required
+                            >
+
+
+                                <option value="">
+
+                                    Select a service
+
+                                </option>
+
+
+                                <option value="Bin Rental">
+
+                                    Bin Rental
+
+                                </option>
+
+
+                                <option value="Cleaning Services">
+
+                                    Cleaning Services
+
+                                </option>
+
+
+                                <option value="Junk Removal">
+
+                                    Junk Removal
+
+                                </option>
+
+
+                                <option value="Other">
+
+                                    Other
+
+                                </option>
+
+
+                            </select>
+
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+
+                            <label for="message">
+
+                                PROJECT DETAILS
+
+                            </label>
+
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Tell us about your project..."
+                                required
+                            ></textarea>
+
+
+                        </div>
+
+
+
+                        <button
+                            class="submit-btn"
+                            type="submit"
+                        >
+
+                            REQUEST MY FREE QUOTE →
+
+                        </button>
+
+
+
+                        <div
+                            class="form-message"
+                            id="formMessage"
+                        >
+
+                            Your project details are ready.
+                            Your email application should
+                            open now.
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             SERVICE AREA
+        ================================= -->
+
+
+        <section class="area-section">
+
+
+            <div class="area-inner">
+
+
+                <div class="area-content">
+
+
+                    <div class="eyebrow">
+
+                        LOCAL EDMONTON SERVICE
+
+                    </div>
+
+
+                    <h2>
+
+                        CLEANUP SOLUTIONS
+                        FOR EDMONTON.
+
+                    </h2>
+
+
+                    <p>
+
+                        ABC Bin Rental provides bin
+                        rental, cleaning and junk removal
+                        services for homeowners,
+                        contractors, property owners and
+                        businesses in Edmonton, Alberta.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="area-card">
+
+
+                    <small>
+
+                        OUR SERVICE AREA
+
+                    </small>
+
+
+                    <strong>
+
+                        EDMONTON,<br>
+
+                        ALBERTA.
+
+                    </strong>
+
+
+                    <p>
+
+                        Contact us to discuss your
+                        location and project requirements.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             CTA
+        ================================= -->
+
+
+        <section class="cta">
+
+
+            <h2>
+
+                PREFER TO CALL US DIRECTLY?
+
+            </h2>
+
+
+            <a
+                class="dark-btn"
+                href="tel:0000000000"
+            >
+
+                CALL 0000000000
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+
+    <div id="footer"></div>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================= -->
+
+
+    <script>
+
+        async function loadSection(id, file) {
+
+            try {
+
+                const response =
+                    await fetch("./" + file);
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "HTTP error: "
+                        + response.status
+                    );
+
+                }
+
+
+                const content =
+                    await response.text();
+
+
+                document
+                    .getElementById(id)
+                    .innerHTML = content;
+
+
+
+                if (id === "header") {
+
+                    const button =
+                        document.querySelector(
+                            ".menu-toggle"
+                        );
+
+
+                    const nav =
+                        document.querySelector(
+                            ".main-nav"
+                        );
+
+
+                    if (button && nav) {
+
+                        button.addEventListener(
+
+                            "click",
+
+                            function () {
+
+                                nav.classList.toggle(
+                                    "open"
+                                );
+
+                            }
+
+                        );
+
+                    }
+
+                }
+
+            }
+
+
+            catch (error) {
+
+                console.error(
+
+                    "Unable to load "
+                    + file,
+
+                    error
+
+                );
+
+            }
+
+        }
+
+
+
+        document.addEventListener(
+
+            "DOMContentLoaded",
+
+            function () {
+
+                loadSection(
+                    "header",
+                    "header.html"
+                );
+
+
+                loadSection(
+                    "footer",
+                    "footer.html"
+                );
+
+            }
+
+        );
+
+
+
+        document
+            .getElementById("contactForm")
+            .addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const name =
+                        document
+                            .getElementById("name")
+                            .value;
+
+
+                    const phone =
+                        document
+                            .getElementById("phone")
+                            .value;
+
+
+                    const email =
+                        document
+                            .getElementById("email")
+                            .value;
+
+
+                    const service =
+                        document
+                            .getElementById("service")
+                            .value;
+
+
+                    const message =
+                        document
+                            .getElementById("message")
+                            .value;
+
+
+
+                    const subject =
+
+                        "Free Quote Request - "
+                        + service;
+
+
+
+                    const body =
+
+                        "Name: "
+                        + name
+                        + "\n\n"
+
+                        + "Phone: "
+                        + phone
+                        + "\n\n"
+
+                        + "Email: "
+                        + email
+                        + "\n\n"
+
+                        + "Service Needed: "
+                        + service
+                        + "\n\n"
+
+                        + "Project Details:\n"
+                        + message;
+
+
+
+                    document
+                        .getElementById("formMessage")
+                        .style
+                        .display = "block";
+
+
+
+                    window.location.href =
+
+                        "mailto:binrental@gmail.com"
+
+                        + "?subject="
+                        + encodeURIComponent(subject)
+
+                        + "&body="
+                        + encodeURIComponent(body);
+
+                }
+            );
+
+    </script>
+
+
+</body>
+
+</html>
