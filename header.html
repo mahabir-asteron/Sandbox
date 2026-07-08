@@ -12,6 +12,12 @@
     }
 
 
+    .site-header,
+    .site-header * {
+        box-sizing: border-box;
+    }
+
+
     .site-header {
         width: 100%;
         height: 84px;
@@ -21,6 +27,7 @@
         position: relative;
         z-index: 9999;
         border-bottom: 1px solid rgba(23, 79, 59, 0.10);
+        font-family: Arial, Helvetica, sans-serif;
     }
 
 
@@ -34,11 +41,6 @@
         justify-content: space-between;
         gap: 35px;
     }
-
-
-    /* =================================
-       LOGO
-    ================================= */
 
 
     .site-logo {
@@ -106,11 +108,6 @@
     }
 
 
-    /* =================================
-       NAVIGATION
-    ================================= */
-
-
     .main-nav {
         display: flex;
         align-items: center;
@@ -125,21 +122,11 @@
         font-weight: 900;
         letter-spacing: 0.5px;
         text-decoration: none;
-        position: relative;
-        transition: 0.2s;
     }
 
 
-    .main-nav > a::after,
-    .dropdown-button::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -9px;
-        width: 0;
-        height: 2px;
-        background: var(--header-green);
-        transition: width 0.2s;
+    .main-nav > a {
+        position: relative;
     }
 
 
@@ -147,17 +134,6 @@
     .dropdown-button:hover {
         color: var(--header-green);
     }
-
-
-    .main-nav > a:hover::after,
-    .dropdown:hover .dropdown-button::after {
-        width: 100%;
-    }
-
-
-    /* =================================
-       DROPDOWN
-    ================================= */
 
 
     .dropdown {
@@ -170,12 +146,13 @@
         align-items: center;
         gap: 7px;
         cursor: pointer;
-        padding: 30px 0;
+        padding: 34px 0;
+        user-select: none;
     }
 
 
     .dropdown-arrow {
-        font-size: 10px;
+        font-size: 9px;
         transition: transform 0.2s;
     }
 
@@ -187,14 +164,14 @@
 
     .dropdown-menu {
         position: absolute;
-        top: 72px;
+        top: 78px;
         left: -25px;
         width: 235px;
         background: var(--header-white);
         padding: 10px;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(12px);
+        transform: translateY(10px);
         transition: 0.22s;
         box-shadow: 0 18px 45px rgba(13, 52, 39, 0.15);
         border-top: 3px solid var(--header-lime);
@@ -226,15 +203,10 @@
     }
 
 
-    /* =================================
-       HEADER CTA
-    ================================= */
-
-
     .header-cta {
         display: inline-block;
         background: var(--header-green);
-        color: var(--header-white) !important;
+        color: var(--header-white);
         padding: 16px 23px;
         font-size: 12px;
         font-weight: 900;
@@ -249,11 +221,6 @@
         background: var(--header-dark);
         transform: translateY(-2px);
     }
-
-
-    /* =================================
-       MOBILE MENU BUTTON
-    ================================= */
 
 
     .menu-toggle {
@@ -294,11 +261,6 @@
     }
 
 
-    /* =================================
-       TABLET / MOBILE
-    ================================= */
-
-
     @media (max-width: 1050px) {
 
         .header-container {
@@ -328,7 +290,6 @@
             gap: 0;
             padding: 15px 6% 30px;
             box-shadow: 0 20px 40px rgba(13, 52, 39, 0.12);
-            border-top: 1px solid rgba(23, 79, 59, 0.08);
         }
 
 
@@ -340,12 +301,6 @@
         .main-nav > a {
             padding: 17px 0;
             border-bottom: 1px solid #e4e8e3;
-        }
-
-
-        .main-nav > a::after,
-        .dropdown-button::after {
-            display: none;
         }
 
 
@@ -424,7 +379,6 @@
 
         .logo-text span {
             font-size: 8px;
-            letter-spacing: 1.2px;
         }
 
 
@@ -440,11 +394,7 @@
 
 <header class="site-header">
 
-
     <div class="header-container">
-
-
-        <!-- LOGO -->
 
 
         <a
@@ -453,9 +403,7 @@
             aria-label="ABC Bin Rental Home"
         >
 
-
             <div class="logo-icon"></div>
-
 
             <div class="logo-text">
 
@@ -469,19 +417,13 @@
 
             </div>
 
-
         </a>
-
-
-
-        <!-- NAVIGATION -->
 
 
         <nav
             class="main-nav"
             aria-label="Main navigation"
         >
-
 
             <a href="index.html">
                 HOME
@@ -493,18 +435,12 @@
             </a>
 
 
-
-            <!-- SERVICES DROPDOWN -->
-
-
             <div class="dropdown">
-
 
                 <div
                     class="dropdown-button"
                     role="button"
                     tabindex="0"
-                    aria-label="Services menu"
                 >
 
                     SERVICES
@@ -518,45 +454,33 @@
 
                 <div class="dropdown-menu">
 
-
                     <a href="service.html">
                         All Services
                     </a>
-
 
                     <a href="service-one.html">
                         Bin Rental
                     </a>
 
-
                     <a href="service-two.html">
                         Cleaning Services
                     </a>
-
 
                     <a href="service-three.html">
                         Junk Removal
                     </a>
 
-
                 </div>
-
 
             </div>
 
 
-
-            <!-- PROJECTS DROPDOWN -->
-
-
             <div class="dropdown">
-
 
                 <div
                     class="dropdown-button"
                     role="button"
                     tabindex="0"
-                    aria-label="Projects menu"
                 >
 
                     PROJECTS
@@ -570,24 +494,19 @@
 
                 <div class="dropdown-menu">
 
-
                     <a href="projects.html">
                         All Projects
                     </a>
-
 
                     <a href="project-one.html">
                         Project One
                     </a>
 
-
                     <a href="project-two.html">
                         Project Two
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -596,26 +515,15 @@
                 CONTACT US
             </a>
 
-
         </nav>
-
-
-
-        <!-- HEADER CTA -->
 
 
         <a
             href="contact.html"
             class="header-cta"
         >
-
             GET A FREE QUOTE
-
         </a>
-
-
-
-        <!-- MOBILE MENU -->
 
 
         <button
@@ -626,9 +534,7 @@
         >
 
             <span></span>
-
             <span></span>
-
             <span></span>
 
         </button>
@@ -636,148 +542,4 @@
 
     </div>
 
-
 </header>
-
-
-<script>
-
-    (function () {
-
-        const menuButton =
-            document.querySelector(".menu-toggle");
-
-
-        const navigation =
-            document.querySelector(".main-nav");
-
-
-        const dropdowns =
-            document.querySelectorAll(".dropdown");
-
-
-        if (menuButton && navigation) {
-
-            menuButton.addEventListener(
-                "click",
-                function () {
-
-                    navigation.classList.toggle("open");
-
-                    menuButton.classList.toggle("active");
-
-
-                    const isOpen =
-                        navigation.classList.contains("open");
-
-
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        isOpen
-                    );
-
-                }
-            );
-
-        }
-
-
-        dropdowns.forEach(
-            function (dropdown) {
-
-                const button =
-                    dropdown.querySelector(
-                        ".dropdown-button"
-                    );
-
-
-                if (!button) {
-                    return;
-                }
-
-
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        if (
-                            window.innerWidth <= 1050
-                        ) {
-
-                            dropdown.classList.toggle(
-                                "mobile-open"
-                            );
-
-                        }
-
-                    }
-                );
-
-
-                button.addEventListener(
-                    "keydown",
-                    function (event) {
-
-                        if (
-                            event.key === "Enter" ||
-                            event.key === " "
-                        ) {
-
-                            event.preventDefault();
-
-                            dropdown.classList.toggle(
-                                "mobile-open"
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
-
-        window.addEventListener(
-            "resize",
-            function () {
-
-                if (
-                    window.innerWidth > 1050
-                ) {
-
-                    navigation
-                        ?.classList
-                        .remove("open");
-
-
-                    menuButton
-                        ?.classList
-                        .remove("active");
-
-
-                    menuButton
-                        ?.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-
-                    dropdowns.forEach(
-                        function (dropdown) {
-
-                            dropdown.classList.remove(
-                                "mobile-open"
-                            );
-
-                        }
-                    );
-
-                }
-
-            }
-        );
-
-    })();
-
-</script>
