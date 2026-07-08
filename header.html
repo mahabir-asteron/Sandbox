@@ -1,446 +1,45 @@
-<!-- =================================
-     ABC BIN RENTAL HEADER
-================================= -->
-
-<style>
-
-    :root {
-        --header-green: #174f3b;
-        --header-dark: #0d3427;
-        --header-lime: #d9f24f;
-        --header-white: #ffffff;
-    }
-
-
-    .site-header,
-    .site-header * {
-        box-sizing: border-box;
-    }
-
-
-    .site-header {
-        width: 100%;
-        height: 84px;
-        background: var(--header-white);
-        display: flex;
-        align-items: center;
-        position: relative;
-        z-index: 9999;
-        border-bottom: 1px solid rgba(23, 79, 59, 0.10);
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-
-    .header-container {
-        width: 100%;
-        max-width: 1500px;
-        margin: auto;
-        padding: 0 7.5%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 35px;
-    }
-
-
-    .site-logo {
-        display: flex;
-        align-items: center;
-        gap: 13px;
-        text-decoration: none;
-        color: var(--header-dark);
-        flex-shrink: 0;
-    }
-
-
-    .logo-icon {
-        width: 47px;
-        height: 47px;
-        background: var(--header-green);
-        display: grid;
-        place-items: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-
-    .logo-icon::before {
-        content: "";
-        width: 20px;
-        height: 17px;
-        border: 3px solid var(--header-lime);
-        border-top: 0;
-        transform: skew(-5deg);
-    }
-
-
-    .logo-icon::after {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 3px;
-        background: var(--header-lime);
-        top: 13px;
-        left: 11px;
-    }
-
-
-    .logo-text {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    .logo-text strong {
-        font-size: 20px;
-        line-height: 1;
-        font-weight: 900;
-        letter-spacing: -0.7px;
-    }
-
-
-    .logo-text span {
-        margin-top: 5px;
-        color: #65716b;
-        font-size: 9px;
-        font-weight: 900;
-        letter-spacing: 1.6px;
-    }
-
-
-    .main-nav {
-        display: flex;
-        align-items: center;
-        gap: 34px;
-    }
-
-
-    .main-nav > a,
-    .dropdown-button {
-        color: var(--header-dark);
-        font-size: 12px;
-        font-weight: 900;
-        letter-spacing: 0.5px;
-        text-decoration: none;
-    }
-
-
-    .main-nav > a {
-        position: relative;
-    }
-
-
-    .main-nav > a:hover,
-    .dropdown-button:hover {
-        color: var(--header-green);
-    }
-
-
-    .dropdown {
-        position: relative;
-    }
-
-
-    .dropdown-button {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        cursor: pointer;
-        padding: 34px 0;
-        user-select: none;
-    }
-
-
-    .dropdown-arrow {
-        font-size: 9px;
-        transition: transform 0.2s;
-    }
-
-
-    .dropdown:hover .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-
-
-    .dropdown-menu {
-        position: absolute;
-        top: 78px;
-        left: -25px;
-        width: 235px;
-        background: var(--header-white);
-        padding: 10px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: 0.22s;
-        box-shadow: 0 18px 45px rgba(13, 52, 39, 0.15);
-        border-top: 3px solid var(--header-lime);
-    }
-
-
-    .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-
-    .dropdown-menu a {
-        display: block;
-        padding: 14px 15px;
-        color: var(--header-dark);
-        text-decoration: none;
-        font-size: 12px;
-        font-weight: 800;
-        transition: 0.2s;
-    }
-
-
-    .dropdown-menu a:hover {
-        background: #edf4d0;
-        color: var(--header-green);
-        padding-left: 20px;
-    }
-
-
-    .header-cta {
-        display: inline-block;
-        background: var(--header-green);
-        color: var(--header-white);
-        padding: 16px 23px;
-        font-size: 12px;
-        font-weight: 900;
-        letter-spacing: 0.5px;
-        text-decoration: none;
-        transition: 0.2s;
-        flex-shrink: 0;
-    }
-
-
-    .header-cta:hover {
-        background: var(--header-dark);
-        transform: translateY(-2px);
-    }
-
-
-    .menu-toggle {
-        width: 48px;
-        height: 48px;
-        border: 0;
-        background: var(--header-green);
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 5px;
-        padding: 0;
-    }
-
-
-    .menu-toggle span {
-        width: 21px;
-        height: 2px;
-        background: var(--header-lime);
-        transition: 0.25s;
-    }
-
-
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-
-
-    @media (max-width: 1050px) {
-
-        .header-container {
-            padding: 0 6%;
-        }
-
-
-        .menu-toggle {
-            display: flex;
-        }
-
-
-        .header-cta {
-            display: none;
-        }
-
-
-        .main-nav {
-            position: absolute;
-            top: 84px;
-            left: 0;
-            width: 100%;
-            background: var(--header-white);
-            display: none;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0;
-            padding: 15px 6% 30px;
-            box-shadow: 0 20px 40px rgba(13, 52, 39, 0.12);
-        }
-
-
-        .main-nav.open {
-            display: flex;
-        }
-
-
-        .main-nav > a {
-            padding: 17px 0;
-            border-bottom: 1px solid #e4e8e3;
-        }
-
-
-        .dropdown {
-            width: 100%;
-            border-bottom: 1px solid #e4e8e3;
-        }
-
-
-        .dropdown-button {
-            width: 100%;
-            justify-content: space-between;
-            padding: 17px 0;
-        }
-
-
-        .dropdown-menu {
-            position: static;
-            width: 100%;
-            display: none;
-            opacity: 1;
-            visibility: visible;
-            transform: none;
-            box-shadow: none;
-            border-top: 0;
-            padding: 0 0 12px 15px;
-        }
-
-
-        .dropdown.mobile-open .dropdown-menu {
-            display: block;
-        }
-
-
-        .dropdown.mobile-open .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-
-
-        .dropdown-menu a {
-            padding: 13px 15px;
-            background: #f7f8f3;
-            margin-bottom: 2px;
-        }
-
-    }
-
-
-    @media (max-width: 500px) {
-
-        .site-header {
-            height: 76px;
-        }
-
-
-        .main-nav {
-            top: 76px;
-        }
-
-
-        .header-container {
-            padding: 0 5%;
-        }
-
-
-        .logo-icon {
-            width: 43px;
-            height: 43px;
-        }
-
-
-        .logo-text strong {
-            font-size: 17px;
-        }
-
-
-        .logo-text span {
-            font-size: 8px;
-        }
-
-
-        .menu-toggle {
-            width: 44px;
-            height: 44px;
-        }
-
-    }
-
-</style>
-
-
 <header class="site-header">
 
     <div class="header-container">
 
+        <!-- LOGO -->
 
-        <a
-            href="index.html"
-            class="site-logo"
-            aria-label="ABC Bin Rental Home"
-        >
+        <a href="index.html" class="site-logo">
 
             <div class="logo-icon"></div>
 
             <div class="logo-text">
 
-                <strong>
-                    ABC BIN RENTAL
-                </strong>
+                <strong>ABC BIN RENTAL</strong>
 
-                <span>
-                    EDMONTON · ALBERTA
-                </span>
+                <span>EDMONTON · ALBERTA</span>
 
             </div>
 
         </a>
 
 
-        <nav
-            class="main-nav"
-            aria-label="Main navigation"
-        >
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
 
             <a href="index.html">
                 HOME
             </a>
-
 
             <a href="about.html">
                 ABOUT
             </a>
 
 
+            <!-- SERVICES DROPDOWN -->
+
             <div class="dropdown">
 
-                <div
+                <button
                     class="dropdown-button"
-                    role="button"
-                    tabindex="0"
+                    type="button"
+                    aria-expanded="false"
                 >
 
                     SERVICES
@@ -449,7 +48,7 @@
                         ▼
                     </span>
 
-                </div>
+                </button>
 
 
                 <div class="dropdown-menu">
@@ -475,12 +74,14 @@
             </div>
 
 
+            <!-- PROJECTS DROPDOWN -->
+
             <div class="dropdown">
 
-                <div
+                <button
                     class="dropdown-button"
-                    role="button"
-                    tabindex="0"
+                    type="button"
+                    aria-expanded="false"
                 >
 
                     PROJECTS
@@ -489,7 +90,7 @@
                         ▼
                     </span>
 
-                </div>
+                </button>
 
 
                 <div class="dropdown-menu">
@@ -518,18 +119,24 @@
         </nav>
 
 
+        <!-- HEADER CTA -->
+
         <a
             href="contact.html"
             class="header-cta"
         >
+
             GET A FREE QUOTE
+
         </a>
 
+
+        <!-- MOBILE MENU -->
 
         <button
             class="menu-toggle"
             type="button"
-            aria-label="Open navigation menu"
+            aria-label="Open navigation"
             aria-expanded="false"
         >
 
@@ -538,7 +145,6 @@
             <span></span>
 
         </button>
-
 
     </div>
 
