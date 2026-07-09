@@ -1610,6 +1610,43 @@ img {
     }
 
 }
+    /* HEADER LOGO SIZE FIX */
+
+.site-logo img {
+    width: 72px !important;
+    height: 72px !important;
+    max-width: 72px !important;
+    max-height: 72px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+}
+
+.site-logo {
+    gap: 12px !important;
+}
+
+.logo-text strong {
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+}
+
+.logo-text span {
+    font-size: 10px !important;
+    letter-spacing: 2px !important;
+}
+
+@media (max-width: 600px) {
+    .site-logo img {
+        width: 52px !important;
+        height: 52px !important;
+        max-width: 52px !important;
+        max-height: 52px !important;
+    }
+
+    .logo-text strong {
+        font-size: 17px !important;
+    }
+}
 
 
 </style>
