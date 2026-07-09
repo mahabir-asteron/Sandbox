@@ -613,6 +613,205 @@
                 font-size: 37px;
             }
         }
+        /* ABC BIN RENTAL — FOOTER DESIGN */
+
+.site-footer {
+    background: #020b1a;
+    color: #fefdf9;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.footer-main {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 80px 30px 65px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    gap: 60px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fefdf9;
+    text-decoration: none;
+}
+
+.footer-logo-icon {
+    width: 42px;
+    height: 42px;
+    background: #f3b664;
+}
+
+.footer-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-text strong {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fefdf9;
+}
+
+.footer-logo-text span {
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f3b664;
+}
+
+.footer-description {
+    margin: 28px 0;
+    max-width: 340px;
+    color: #d9e2ec;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.footer-quote {
+    display: inline-block;
+    padding: 17px 25px;
+    background: #f3b664;
+    color: #020b1a;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.footer-quote:hover {
+    background: #fefdf9;
+}
+
+.footer-column h3 {
+    margin: 0 0 28px;
+    color: #f3b664;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #d9e2ec;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #f3b664;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-contact-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #f3b664;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3b664;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.footer-contact-item small {
+    display: block;
+    margin-bottom: 5px;
+    color: #f3b664;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.footer-contact-item a,
+.footer-contact-item strong {
+    color: #fefdf9;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(217, 226, 236, 0.18);
+}
+
+.footer-bottom-inner {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-inner p {
+    margin: 0;
+    color: #9fb3c8;
+    font-size: 12px;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 28px;
+}
+
+.footer-bottom-links a {
+    color: #9fb3c8;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-bottom-links a:hover {
+    color: #f3b664;
+}
+
+@media (max-width: 900px) {
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        padding: 60px 25px 45px;
+        gap: 45px;
+    }
+
+    .footer-bottom-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 25px;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        gap: 15px 22px;
+    }
+}
     </style>
 </head>
 
