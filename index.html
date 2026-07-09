@@ -1,1752 +1,925 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ABC Bin Rental | Bin Rental & Cleaning Edmonton</title>
+
+    <meta name="description" content="ABC Bin Rental provides bin rental, cleaning and junk removal services for homeowners, contractors and businesses in Edmonton, Alberta.">
+
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta
-        name="description"
-        content="ABC Bin Rental provides bin rental, cleaning and junk removal services in Edmonton, Alberta."
-    >
-
-    <title>
-        ABC Bin Rental | Bin Rental & Cleaning Edmonton
-    </title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
     <style>
-
-            :root {
-    --green: #020b1a;
-    --deep: #020b1a;
-    --dark: #020b1a;
-    --lime: #f3b664;
-    --cream: #fefdf9;
-    --white: #fefdf9;
-    --muted: #d9e2ec;
-    --primary: #102a43;
-    --accent: #f3b664;
-}
-
+        :root {
+            --navy: #020b1a;
+            --blue: #102a43;
+            --gold: #f3b664;
+            --soft-blue: #d9e2ec;
+            --cream: #fefdf9;
+            --white: #ffffff;
+        }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
 
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
+            font-family: "Inter", sans-serif;
+            color: var(--navy);
             background: var(--cream);
+            line-height: 1.6;
         }
 
+        h1,
+        h2,
+        h3,
+        .logo-name,
+        .nav-link,
+        .btn {
+            font-family: "Montserrat", sans-serif;
+        }
 
         a {
             color: inherit;
             text-decoration: none;
         }
 
-
-        button {
-            font: inherit;
+        img {
+            display: block;
+            max-width: 100%;
         }
 
+        .container {
+            width: min(1180px, 86%);
+            margin: 0 auto;
+        }
 
-
-        /* =================================
-           HEADER
-        ================================= */
-
+        /* HEADER */
 
         .site-header {
-            width: 100%;
-            height: 84px;
-            background: var(--white);
-            display: flex;
-            align-items: center;
+            background: var(--cream);
             position: relative;
-            z-index: 9999;
-            border-bottom: 1px solid rgba(23, 79, 59, 0.10);
+            z-index: 100;
         }
 
-
-        .header-container {
-            width: 100%;
-            max-width: 1500px;
-            margin: auto;
-            padding: 0 7.5%;
+        .header-inner {
+            min-height: 88px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 35px;
+            gap: 30px;
         }
 
-
-        .site-logo {
+        .brand {
             display: flex;
             align-items: center;
-            gap: 13px;
-            flex-shrink: 0;
+            gap: 15px;
         }
 
-
-        .logo-icon {
-            width: 47px;
-            height: 47px;
-            background: var(--green);
-            display: grid;
-            place-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .logo-image {
-    width: 47px;
-    height: 47px;
-    object-fit: contain;
-    display: block;
-    flex-shrink: 0;
-}
-
-
-        .logo-icon::before {
-            content: "";
-            width: 20px;
-            height: 17px;
-            border: 3px solid var(--lime);
-            border-top: 0;
-            transform: skew(-5deg);
+        .brand img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
         }
 
-
-        .logo-icon::after {
-            content: "";
-            position: absolute;
-            width: 24px;
-            height: 3px;
-            background: var(--lime);
-            top: 13px;
-            left: 11px;
-        }
-
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-
-        .logo-text strong {
-            font-size: 20px;
-            line-height: 1;
-            font-weight: 900;
-            letter-spacing: -0.7px;
-        }
-
-
-        .logo-text span {
-            margin-top: 5px;
-            color: var(--gray);
-            font-size: 9px;
-            font-weight: 900;
-            letter-spacing: 1.6px;
-        }
-
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-
-        .main-nav > a,
-        .dropdown-button {
-            color: var(--dark-green);
-            font-size: 12px;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-        }
-
-
-        .main-nav > a:hover,
-        .dropdown-button:hover {
-            color: var(--green);
-        }
-
-
-        .dropdown {
-            position: relative;
-        }
-
-
-        .dropdown-button {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            cursor: pointer;
-            padding: 34px 0;
-            user-select: none;
-            background: transparent;
-border: none;
-appearance: none;
-        }
-
-
-        .dropdown-arrow {
-            font-size: 9px;
-            transition: 0.2s;
-        }
-
-
-        .dropdown:hover .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-
-
-        .dropdown-menu {
-            position: absolute;
-            top: 77px;
-            left: -25px;
-            width: 235px;
-            background: var(--white);
-            padding: 10px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: 0.22s;
-            box-shadow: 0 18px 45px rgba(13, 52, 39, 0.15);
-            border-top: 3px solid var(--lime);
-        }
-
-
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-
-        .dropdown-menu a {
+        .logo-name {
             display: block;
-            padding: 14px 15px;
-            color: var(--dark-green);
-            font-size: 12px;
+            color: var(--navy);
+            font-size: 20px;
             font-weight: 800;
-            transition: 0.2s;
+            line-height: 1.1;
         }
 
-
-        .dropdown-menu a:hover {
-            background: #edf4d0;
-            color: var(--green);
-            padding-left: 20px;
+        .logo-location {
+            display: block;
+            margin-top: 5px;
+            color: var(--blue);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
         }
 
-
-        .header-cta {
-            background: var(--green);
-            color: var(--white);
-            padding: 16px 23px;
-            font-size: 12px;
-            font-weight: 900;
-            flex-shrink: 0;
-            transition: 0.2s;
-        }
-
-
-        .header-cta:hover {
-            background: var(--dark-green);
-            transform: translateY(-2px);
-        }
-
-
-        .menu-toggle {
-            width: 48px;
-            height: 48px;
-            border: 0;
-            background: var(--green);
-            cursor: pointer;
-            display: none;
+        .nav {
+            display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 5px;
-            padding: 0;
+            gap: 38px;
         }
 
-
-        .menu-toggle span {
-            width: 21px;
-            height: 2px;
-            background: var(--lime);
-            transition: 0.25s;
+        .nav-link {
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .4px;
         }
 
-
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
+        .nav-link:hover {
+            color: var(--gold);
         }
 
-
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
+        .header-quote {
+            padding: 16px 23px;
+            background: var(--navy);
+            color: var(--cream);
         }
 
-
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
+        .header-quote:hover {
+            background: var(--gold);
+            color: var(--navy);
         }
 
-
-
-        /* =================================
-           HERO
-        ================================= */
-
+        /* HERO */
 
         .hero {
-            min-height: 700px;
+            min-height: 680px;
             display: flex;
             align-items: center;
-            padding: 100px 7.5%;
-            color: var(--white);
             position: relative;
             overflow: hidden;
-
             background:
                 linear-gradient(
                     90deg,
-                    rgba(11, 45, 34, 0.97),
-                    rgba(18, 61, 46, 0.87),
-                    rgba(18, 61, 46, 0.35)
+                    rgba(2, 11, 26, .96) 0%,
+                    rgba(16, 42, 67, .88) 48%,
+                    rgba(2, 11, 26, .50) 100%
                 ),
-                url(
-                    "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1900&q=85"
-                );
-
+                url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1900&q=85");
             background-size: cover;
             background-position: center;
         }
 
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 450px;
-            height: 450px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 50%;
-            right: -120px;
-            bottom: -190px;
-
-            box-shadow:
-                0 0 0 75px rgba(255, 255, 255, 0.03),
-                0 0 0 150px rgba(255, 255, 255, 0.02);
-        }
-
-
         .hero-content {
-            max-width: 900px;
+            max-width: 850px;
+            padding: 100px 0;
             position: relative;
             z-index: 2;
         }
 
-
         .eyebrow {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 12px;
-            font-weight: 900;
-            letter-spacing: 2.2px;
-            color: var(--lime);
-            margin-bottom: 22px;
+            color: var(--gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
         }
-
 
         .eyebrow::before {
             content: "";
-            width: 35px;
+            display: inline-block;
+            width: 38px;
             height: 2px;
-            background: currentColor;
+            margin-right: 12px;
+            vertical-align: middle;
+            background: var(--gold);
         }
 
-
-        h1 {
-            font-size: clamp(55px, 7.5vw, 100px);
-            line-height: 0.92;
-            letter-spacing: -6px;
-            margin: 0 0 30px;
+        .hero h1 {
+            margin: 25px 0 28px;
+            color: var(--cream);
+            font-size: clamp(55px, 6.4vw, 96px);
+            font-weight: 800;
+            line-height: .98;
+            letter-spacing: -4px;
         }
-
 
         .hero-description {
-            max-width: 700px;
-            margin: 0 0 38px;
-            color: #e2ece7;
+            max-width: 690px;
+            color: var(--soft-blue);
             font-size: 19px;
-            line-height: 1.75;
+            line-height: 1.8;
         }
-
 
         .hero-buttons {
             display: flex;
-            gap: 14px;
             flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 40px;
         }
 
-
-        .primary-btn {
-            background: var(--lime);
-            color: var(--dark);
-            padding: 18px 27px;
-            font-size: 13px;
-            font-weight: 900;
-            transition: 0.2s;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 56px;
+            padding: 0 30px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: .25s ease;
         }
 
-
-        .primary-btn:hover {
-            background: var(--white);
-            transform: translateY(-2px);
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
         }
 
-
-        .outline-btn {
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: var(--white);
-            padding: 18px 27px;
-            font-size: 13px;
-            font-weight: 900;
-            transition: 0.2s;
+        .btn-primary:hover {
+            background: var(--cream);
         }
 
-
-        .outline-btn:hover {
-            background: var(--white);
-            color: var(--green);
+        .btn-secondary {
+            border: 1px solid var(--soft-blue);
+            color: var(--cream);
         }
 
+        .btn-secondary:hover {
+            background: var(--cream);
+            color: var(--navy);
+        }
 
-
-        /* =================================
-           INTRO
-        ================================= */
-
+        /* INTRO */
 
         .intro {
-            max-width: 1500px;
-            margin: auto;
-            padding: 110px 7.5%;
+            padding: 110px 0;
+            background: var(--cream);
         }
-
 
         .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 90px;
-            align-items: center;
-        }
-
-
-        .intro-content .eyebrow,
-        .services .eyebrow,
-        .area-content .eyebrow {
-            color: var(--green);
-        }
-
-
-        h2 {
-            font-size: clamp(40px, 5vw, 65px);
-            line-height: 1.02;
-            letter-spacing: -3px;
-            margin: 0 0 30px;
-        }
-
-
-        .intro-content p,
-        .area-content p {
-            color: var(--gray);
-            font-size: 17px;
-            line-height: 1.8;
-            margin: 0 0 20px;
-        }
-
-
-        .intro-image {
-            position: relative;
-        }
-
-
-        .intro-image img {
-            width: 100%;
-            height: 580px;
-            object-fit: cover;
-            display: block;
-        }
-
-
-        .intro-label {
-            position: absolute;
-            left: -35px;
-            bottom: 35px;
-            width: 230px;
-            background: var(--lime);
-            padding: 30px;
-        }
-
-
-        .intro-label strong {
-            display: block;
-            color: var(--green);
-            font-size: 36px;
-            margin-bottom: 8px;
-        }
-
-
-        .intro-label span {
-            font-size: 13px;
-            font-weight: 900;
-            line-height: 1.5;
-        }
-
-
-
-        /* =================================
-           SERVICES
-        ================================= */
-
-
-        .services {
-            padding: 105px 7.5%;
-            background: var(--white);
-        }
-
-
-        .services-inner,
-        .process-inner {
-            max-width: 1500px;
-            margin: auto;
-        }
-
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 50px;
-            margin-bottom: 55px;
-        }
-
-
-        .section-header p {
-            max-width: 430px;
-            margin: 0;
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-
-        .service-card {
-            background: var(--cream);
-            padding: 40px;
-            min-height: 390px;
-            border-bottom: 4px solid transparent;
-            transition: 0.25s;
-        }
-
-
-        .service-card:hover {
-            transform: translateY(-7px);
-            border-color: var(--lime);
-            box-shadow: 0 18px 40px rgba(20, 51, 39, 0.09);
-        }
-
-
-        .service-number {
-            color: #8b9690;
-            font-size: 12px;
-            font-weight: 900;
-        }
-
-
-        .service-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: #edf4d0;
-            color: var(--green);
-            font-size: 29px;
-            margin: 30px 0;
-        }
-
-
-        .service-card h3 {
-            margin: 0 0 15px;
-            font-size: 28px;
-        }
-
-
-        .service-card p {
-            margin: 0;
-            color: var(--gray);
-            line-height: 1.75;
-        }
-
-
-        .service-link {
-            display: inline-block;
-            margin-top: 25px;
-            color: var(--green);
-            font-size: 13px;
-            font-weight: 900;
-        }
-
-
-
-        /* =================================
-           PROCESS
-        ================================= */
-
-
-        .process {
-            background: var(--green);
-            color: var(--white);
-            padding: 105px 7.5%;
-        }
-
-
-        .process .eyebrow {
-            color: var(--lime);
-        }
-
-
-        .process h2 {
-            max-width: 800px;
-        }
-
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: rgba(255, 255, 255, 0.15);
-            margin-top: 55px;
-        }
-
-
-        .step {
-            background: var(--green);
-            padding: 45px;
-        }
-
-
-        .step span {
-            color: var(--lime);
-            font-size: 55px;
-            font-weight: 900;
-        }
-
-
-        .step h3 {
-            margin: 25px 0 15px;
-            font-size: 23px;
-        }
-
-
-        .step p {
-            margin: 0;
-            color: #cfddd7;
-            line-height: 1.7;
-        }
-
-
-
-        /* =================================
-           AREA
-        ================================= */
-
-
-        .area {
-            max-width: 1500px;
-            margin: auto;
-            padding: 110px 7.5%;
-        }
-
-
-        .area-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
         }
 
-
-        .area-card {
-            background: var(--lime);
-            padding: 55px;
+        .section-label {
+            color: var(--gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
+        .section-title {
+            margin-top: 18px;
+            color: var(--navy);
+            font-size: clamp(38px, 4vw, 60px);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
 
-        .area-card small {
-            display: block;
+        .intro-text p {
             margin-bottom: 20px;
-            color: var(--green);
+            color: var(--blue);
+            font-size: 17px;
+        }
+
+        .intro-image {
+            min-height: 470px;
+            background:
+                linear-gradient(rgba(16, 42, 67, .12), rgba(16, 42, 67, .12)),
+                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* SERVICES */
+
+        .services {
+            padding: 110px 0;
+            background: var(--navy);
+        }
+
+        .services .section-title {
+            color: var(--cream);
+        }
+
+        .services-intro {
+            max-width: 670px;
+            margin-top: 25px;
+            color: var(--soft-blue);
+            font-size: 17px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 65px;
+            border-top: 1px solid rgba(217, 226, 236, .25);
+            border-bottom: 1px solid rgba(217, 226, 236, .25);
+        }
+
+        .service-card {
+            min-height: 390px;
+            padding: 45px 38px;
+            border-right: 1px solid rgba(217, 226, 236, .25);
+            transition: .3s ease;
+        }
+
+        .service-card:first-child {
+            border-left: 1px solid rgba(217, 226, 236, .25);
+        }
+
+        .service-card:hover {
+            background: var(--blue);
+            transform: translateY(-8px);
+        }
+
+        .service-number {
+            color: var(--gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .service-icon {
+            margin: 55px 0 28px;
+            color: var(--gold);
+            font-size: 34px;
+        }
+
+        .service-card h3 {
+            color: var(--cream);
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            margin: 20px 0 35px;
+            color: var(--soft-blue);
+        }
+
+        .service-link {
+            color: var(--gold);
+            font-family: "Montserrat", sans-serif;
             font-size: 11px;
-            font-weight: 900;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* PROCESS */
+
+        .process {
+            padding: 110px 0;
+            background: var(--soft-blue);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 45px;
+            margin-top: 65px;
+        }
+
+        .process-step {
+            padding-top: 28px;
+            border-top: 3px solid var(--gold);
+        }
+
+        .step-number {
+            color: var(--gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .process-step h3 {
+            margin: 22px 0 15px;
+            color: var(--navy);
+            font-size: 22px;
+        }
+
+        .process-step p {
+            color: var(--blue);
+        }
+
+        /* SERVICE AREA */
+
+        .area {
+            padding: 110px 0;
+            background: var(--cream);
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: 1fr .85fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .area-copy p {
+            margin-top: 25px;
+            color: var(--blue);
+            font-size: 17px;
+        }
+
+        .area-card {
+            padding: 70px 55px;
+            background: var(--blue);
+        }
+
+        .area-card span {
+            color: var(--gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
             letter-spacing: 2px;
         }
 
-
-        .area-card strong {
-            display: block;
-            font-size: clamp(42px, 5vw, 70px);
-            line-height: 0.93;
-            letter-spacing: -4px;
+        .area-card h3 {
+            margin: 20px 0;
+            color: var(--cream);
+            font-size: 45px;
+            line-height: 1.05;
         }
-
 
         .area-card p {
-            margin: 25px 0 0;
-            line-height: 1.7;
+            color: var(--soft-blue);
         }
 
-
-
-        /* =================================
-           CTA
-        ================================= */
-
+        /* CTA */
 
         .cta {
-            background: var(--lime);
-            padding: 75px 7.5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 35px;
+            padding: 100px 0;
+            text-align: center;
+            background: var(--gold);
         }
-
 
         .cta h2 {
-            margin: 0;
-            max-width: 800px;
+            max-width: 850px;
+            margin: 0 auto 35px;
+            color: var(--navy);
+            font-size: clamp(38px, 5vw, 70px);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -2px;
         }
 
-
-        .dark-btn {
-            background: var(--dark-green);
-            color: var(--white);
-            padding: 19px 29px;
-            font-size: 13px;
-            font-weight: 900;
-            white-space: nowrap;
+        .cta .btn {
+            background: var(--navy);
+            color: var(--cream);
         }
 
-
-
-        /* =================================
-           FOOTER
-        ================================= */
-
-
-        .site-footer {
-            background: var(--dark-green);
-            color: var(--white);
+        .cta .btn:hover {
+            background: var(--blue);
         }
 
+        /* FOOTER */
 
-        .footer-main {
-            max-width: 1500px;
-            margin: auto;
-            padding: 80px 7.5% 65px;
+        .footer {
+            padding: 65px 0 30px;
+            background: var(--navy);
+            color: var(--soft-blue);
+        }
+
+        .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 0.8fr 0.9fr 1fr;
-            gap: 65px;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
         }
 
-
-        .footer-brand {
-            max-width: 390px;
+        .footer h3 {
+            color: var(--cream);
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 28px;
-        }
-
-
-        .footer-logo-icon {
-            width: 52px;
-            height: 52px;
-            background: var(--lime);
-            display: grid;
-            place-items: center;
-            position: relative;
-        }
-
-
-        .footer-logo-icon::before {
-            content: "";
-            width: 21px;
-            height: 18px;
-            border: 3px solid var(--dark-green);
-            border-top: 0;
-        }
-
-
-        .footer-logo-icon::after {
-            content: "";
-            position: absolute;
-            width: 25px;
-            height: 3px;
-            background: var(--dark-green);
-            top: 14px;
-        }
-
-
-        .footer-logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-
-        .footer-logo-text strong {
-            font-size: 21px;
-            font-weight: 900;
-        }
-
-
-        .footer-logo-text span {
-            margin-top: 5px;
-            color: var(--lime);
-            font-size: 9px;
-            font-weight: 900;
-            letter-spacing: 1.7px;
-        }
-
-
-        .footer-description {
-            color: #cbd8d2;
-            font-size: 15px;
-            line-height: 1.8;
-            margin: 0 0 30px;
-        }
-
-
-        .footer-quote {
-            display: inline-block;
-            background: var(--lime);
-            color: var(--dark-green);
-            padding: 16px 23px;
-            font-size: 12px;
-            font-weight: 900;
-        }
-
-
-        .footer-column h3 {
-            margin: 0 0 27px;
-            font-size: 13px;
-            font-weight: 900;
-            letter-spacing: 1.5px;
-        }
-
-
-        .footer-column h3::after {
-            content: "";
-            display: block;
-            width: 30px;
-            height: 2px;
-            margin-top: 12px;
-            background: var(--lime);
-        }
-
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-
-        .footer-links a {
-            color: #cbd8d2;
+        .footer p,
+        .footer a {
             font-size: 14px;
         }
 
-
-        .footer-links a:hover {
-            color: var(--lime);
-        }
-
-
-        .footer-contact {
-            display: grid;
-            gap: 22px;
-        }
-
-
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
-
-
-        .footer-contact-icon {
-            min-width: 38px;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgba(217, 242, 79, 0.12);
-            color: var(--lime);
-            display: grid;
-            place-items: center;
-            font-weight: 900;
-        }
-
-
-        .footer-contact-item small {
+        .footer a {
             display: block;
-            margin-bottom: 5px;
-            color: #8fa69c;
-            font-size: 9px;
-            font-weight: 900;
-            letter-spacing: 1.2px;
+            margin-bottom: 10px;
         }
 
-
-        .footer-contact-item a,
-        .footer-contact-item strong {
-            color: #cbd8d2;
-            font-size: 14px;
-            line-height: 1.6;
+        .footer a:hover {
+            color: var(--gold);
         }
-
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            margin-top: 55px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(217, 226, 236, .18);
+            font-size: 13px;
         }
 
+        /* MOBILE */
 
-        .footer-bottom-inner {
-            max-width: 1500px;
-            margin: auto;
-            padding: 25px 7.5%;
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-
-        .footer-bottom p {
-            margin: 0;
-            color: #8fa69c;
-            font-size: 12px;
-        }
-
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 25px;
-        }
-
-
-        .footer-bottom-links a {
-            color: #8fa69c;
-            font-size: 12px;
-        }
-
-
-
-        /* =================================
-           TABLET
-        ================================= */
-
-
-        @media (max-width: 1050px) {
-
-            .menu-toggle {
-                display: flex;
-            }
-
-
-            .header-cta {
+        @media (max-width: 900px) {
+            .nav {
                 display: none;
             }
 
-
-            .main-nav {
-                position: absolute;
-                top: 84px;
-                left: 0;
-                width: 100%;
-                background: var(--white);
+            .header-quote {
                 display: none;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                padding: 15px 6% 30px;
-                box-shadow: 0 20px 40px rgba(13, 52, 39, 0.12);
             }
 
-
-            .main-nav.open {
-                display: flex;
+            .header-inner {
+                min-height: 76px;
             }
 
-
-            .main-nav > a {
-                padding: 17px 0;
-                border-bottom: 1px solid var(--border);
+            .hero {
+                min-height: 650px;
             }
 
-
-            .dropdown {
-                width: 100%;
-                border-bottom: 1px solid var(--border);
+            .hero h1 {
+                letter-spacing: -2px;
             }
-
-
-            .dropdown-button {
-                justify-content: space-between;
-                padding: 17px 0;
-            }
-
-
-            .dropdown-menu {
-                position: static;
-                width: 100%;
-                display: none;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border-top: 0;
-                padding: 0 0 12px 15px;
-            }
-
-
-            .dropdown.mobile-open .dropdown-menu {
-                display: block;
-            }
-
 
             .intro-grid,
             .area-grid {
                 grid-template-columns: 1fr;
+                gap: 50px;
             }
 
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .service-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
             }
 
-
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .service-card {
+                border-left: 1px solid rgba(217, 226, 236, .25);
+                border-bottom: 1px solid rgba(217, 226, 236, .25);
             }
 
-
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
-
         }
 
-
-
-        /* =================================
-           MOBILE
-        ================================= */
-
-
-        @media (max-width: 650px) {
-
-            .site-header {
-                height: 76px;
+        @media (max-width: 600px) {
+            .container {
+                width: 88%;
             }
 
-
-            .header-container {
-                padding: 0 5%;
+            .brand img {
+                width: 42px;
+                height: 42px;
             }
 
-
-            .main-nav {
-                top: 76px;
-            }
-
-
-            .logo-icon {
-                width: 43px;
-                height: 43px;
-            }
-
-
-            .logo-text strong {
+            .logo-name {
                 font-size: 17px;
             }
 
-
             .hero {
-                min-height: 650px;
-                padding: 80px 6%;
+                min-height: 620px;
             }
 
-
-            h1 {
-                font-size: 54px;
-                letter-spacing: -3px;
+            .hero-content {
+                padding: 75px 0;
             }
 
+            .hero h1 {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
 
             .intro,
             .services,
             .process,
             .area {
-                padding: 75px 6%;
+                padding: 80px 0;
             }
 
-
-            .intro-image img {
-                height: 430px;
+            .section-title {
+                font-size: 39px;
             }
 
-
-            .intro-label {
-                position: relative;
-                left: auto;
-                bottom: auto;
-                width: 100%;
+            .intro-image {
+                min-height: 350px;
             }
 
-
-            .services-grid,
-            .steps {
-                grid-template-columns: 1fr;
+            .area-card {
+                padding: 50px 35px;
             }
 
-
-            .service-card {
-                padding: 30px;
+            .area-card h3 {
+                font-size: 37px;
             }
-
-
-            .cta {
-                padding: 55px 6%;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-
-            .footer-main {
-                padding: 65px 6% 50px;
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-
-            .footer-bottom-inner {
-                padding: 25px 6%;
-                flex-direction: column;
-            }
-
-
-            .footer-bottom-links {
-                flex-wrap: wrap;
-            }
-
         }
-        .hero h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-}
-.hero h1 {
-    color: #fefdf9 !important;
-}
-
-.hero .eyebrow {
-    color: #f3b664 !important;
-}
-
-.hero p {
-    color: #d9e2ec !important;
-}
-
-.hero .btn-primary {
-    background: #f3b664 !important;
-    color: #020b1a !important;
-}
-
-.hero .btn-secondary {
-    color: #fefdf9 !important;
-    border-color: #d9e2ec !important;
-}
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-
 </head>
-
 
 <body>
 
+<header class="site-header">
+    <div class="container header-inner">
 
-    <!-- HEADER -->
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="ABC Bin Rental Logo">
 
+            <span>
+                <span class="logo-name">ABC BIN RENTAL</span>
+                <span class="logo-location">EDMONTON · ALBERTA</span>
+            </span>
+        </a>
 
-   <div id="header-placeholder"></div>
+        <nav class="nav">
+            <a class="nav-link" href="index.html">HOME</a>
+            <a class="nav-link" href="about.html">ABOUT</a>
+            <a class="nav-link" href="service.html">SERVICES</a>
+            <a class="nav-link" href="projects.html">PROJECTS</a>
+            <a class="nav-link" href="contact.html">CONTACT US</a>
+        </nav>
 
+        <a href="contact.html" class="btn header-quote">GET A FREE QUOTE</a>
 
+    </div>
+</header>
 
-    <main>
+<main>
 
-
-        <!-- HERO -->
-
-
-        <section class="hero">
+    <section class="hero">
+        <div class="container">
 
             <div class="hero-content">
 
                 <div class="eyebrow">
-                    EDMONTON BIN RENTAL & CLEANING
+                    Edmonton Bin Rental & Cleaning
                 </div>
 
-
                 <h1>
-
                     CLEAR THE MESS.<br>
-
                     KEEP MOVING.
-
                 </h1>
 
-
                 <p class="hero-description">
-
-                    Practical bin rental, cleaning and
-                    junk removal services for homeowners,
-                    contractors and businesses across
-                    Edmonton, Alberta.
-
+                    Practical bin rental, cleaning and junk removal services for homeowners,
+                    contractors and businesses across Edmonton, Alberta.
                 </p>
 
-
                 <div class="hero-buttons">
-
-                    <a
-                        href="contact.html"
-                        class="primary-btn"
-                    >
+                    <a href="contact.html" class="btn btn-primary">
                         GET A FREE QUOTE
                     </a>
 
-
-                    <a
-                        href="service.html"
-                        class="outline-btn"
-                    >
+                    <a href="#services" class="btn btn-secondary">
                         VIEW OUR SERVICES
                     </a>
-
                 </div>
 
             </div>
 
-        </section>
+        </div>
+    </section>
 
+    <section class="intro">
+        <div class="container intro-grid">
 
+            <div class="intro-copy">
 
-        <!-- INTRO -->
+                <div class="section-label">ABC BIN RENTAL</div>
 
-
-        <section class="intro">
-
-            <div class="intro-grid">
-
-
-                <div class="intro-content">
-
-                    <div class="eyebrow">
-                        ABC BIN RENTAL
-                    </div>
-
-
-                    <h2>
-
-                        SIMPLE CLEANUP
-                        SOLUTIONS FOR
-                        EDMONTON.
-
-                    </h2>
-
-
-                    <p>
-
-                        Cleanup projects should not feel
-                        more complicated than the work
-                        itself. ABC Bin Rental provides
-                        practical waste and cleanup
-                        services designed for different
-                        property and project needs.
-
-                    </p>
-
-
-                    <p>
-
-                        From home cleanouts and
-                        renovations to property cleanup,
-                        our goal is to provide
-                        straightforward service and help
-                        keep your project moving.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="intro-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1100&q=85"
-                        alt="Edmonton cleanup service"
-                    >
-
-
-                    <div class="intro-label">
-
-                        <strong>
-                            ABC
-                        </strong>
-
-                        <span>
-                            CLEANUP SOLUTIONS
-                            FOR EDMONTON
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- SERVICES -->
-
-
-        <section class="services">
-
-            <div class="services-inner">
-
-
-                <div class="section-header">
-
-                    <div>
-
-                        <div class="eyebrow">
-                            OUR SERVICES
-                        </div>
-
-
-                        <h2>
-
-                            WHAT CAN WE
-                            HELP YOU CLEAR?
-
-                        </h2>
-
-                    </div>
-
-
-                    <p>
-
-                        Practical cleanup solutions for
-                        homes, properties and project
-                        spaces throughout Edmonton.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="services-grid">
-
-
-                    <article class="service-card">
-
-                        <span class="service-number">
-                            01
-                        </span>
-
-
-                        <div class="service-icon">
-                            ▣
-                        </div>
-
-
-                        <h3>
-                            Bin Rental
-                        </h3>
-
-
-                        <p>
-
-                            Convenient bin rental
-                            solutions for home cleanouts,
-                            renovations and project
-                            debris.
-
-                        </p>
-
-
-                        <a
-                            href="bin-rental.html"
-                            class="service-link"
-                        >
-                            EXPLORE BIN RENTAL →
-                        </a>
-
-                    </article>
-
-
-
-                    <article class="service-card">
-
-                        <span class="service-number">
-                            02
-                        </span>
-
-
-                        <div class="service-icon">
-                            ✦
-                        </div>
-
-
-                        <h3>
-                            Cleaning Services
-                        </h3>
-
-
-                        <p>
-
-                            Professional cleaning support
-                            for homes, properties and
-                            project spaces.
-
-                        </p>
-
-
-                        <a
-                            href="cleaning-services.html"
-                            class="service-link"
-                        >
-                            EXPLORE CLEANING →
-                        </a>
-
-                    </article>
-
-
-
-                    <article class="service-card">
-
-                        <span class="service-number">
-                            03
-                        </span>
-
-
-                        <div class="service-icon">
-                            ↗
-                        </div>
-
-
-                        <h3>
-                            Junk Removal
-                        </h3>
-
-
-                        <p>
-
-                            Clear unwanted materials,
-                            general clutter and property
-                            waste with practical junk
-                            removal services.
-
-                        </p>
-
-
-                        <a
-                            href="junk-removal.html"
-                            class="service-link"
-                        >
-                            EXPLORE JUNK REMOVAL →
-                        </a>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- PROCESS -->
-
-
-        <section class="process">
-
-            <div class="process-inner">
-
-
-                <div class="eyebrow">
-                    HOW IT WORKS
-                </div>
-
-
-                <h2>
-
-                    THREE SIMPLE STEPS
-                    TO A CLEANER SPACE.
-
+                <h2 class="section-title">
+                    SIMPLE CLEANUP SOLUTIONS FOR EDMONTON.
                 </h2>
 
+                <div class="intro-text">
+                    <p>
+                        Cleanup projects should not feel more complicated than the work itself.
+                        ABC Bin Rental provides practical waste and cleanup services designed for
+                        different property and project needs.
+                    </p>
 
-
-                <div class="steps">
-
-
-                    <div class="step">
-
-                        <span>
-                            01
-                        </span>
-
-
-                        <h3>
-                            Tell Us About Your Project
-                        </h3>
-
-
-                        <p>
-
-                            Contact ABC Bin Rental and
-                            share details about your
-                            cleanup or waste management
-                            needs.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="step">
-
-                        <span>
-                            02
-                        </span>
-
-
-                        <h3>
-                            Choose Your Service
-                        </h3>
-
-
-                        <p>
-
-                            Select bin rental, cleaning
-                            or junk removal based on your
-                            project requirements.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="step">
-
-                        <span>
-                            03
-                        </span>
-
-
-                        <h3>
-                            Schedule Your Cleanup
-                        </h3>
-
-
-                        <p>
-
-                            Choose a suitable service
-                            schedule and move your
-                            Edmonton project forward.
-
-                        </p>
-
-                    </div>
-
-
+                    <p>
+                        From home cleanouts and renovations to property cleanup, our goal is to
+                        provide straightforward service and help keep your project moving.
+                    </p>
                 </div>
 
             </div>
 
-        </section>
+            <div class="intro-image" aria-label="Edmonton cleanup service"></div>
 
+        </div>
+    </section>
 
+    <section class="services" id="services">
+        <div class="container">
 
-        <!-- AREA -->
+            <div class="section-label">OUR SERVICES</div>
 
-
-        <section class="area">
-
-            <div class="area-grid">
-
-
-                <div class="area-content">
-
-                    <div class="eyebrow">
-                        LOCAL SERVICE
-                    </div>
-
-
-                    <h2>
-
-                        SERVING EDMONTON,
-                        ALBERTA.
-
-                    </h2>
-
-
-                    <p>
-
-                        ABC Bin Rental provides bin
-                        rental, cleaning and junk removal
-                        services for homeowners,
-                        contractors, property owners and
-                        businesses in Edmonton.
-
-                    </p>
-
-
-                    <p>
-
-                        Tell us about your location and
-                        project needs, and we can discuss
-                        a practical cleanup solution.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="area-card">
-
-                    <small>
-                        OUR SERVICE AREA
-                    </small>
-
-
-                    <strong>
-
-                        EDMONTON,<br>
-
-                        ALBERTA.
-
-                    </strong>
-
-
-                    <p>
-
-                        Local cleanup solutions for
-                        residential and project needs.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- CTA -->
-
-
-        <section class="cta">
-
-            <h2>
-
-                READY TO START
-                YOUR CLEANUP PROJECT?
-
+            <h2 class="section-title">
+                WHAT CAN WE HELP YOU CLEAR?
             </h2>
 
+            <p class="services-intro">
+                Practical cleanup solutions for homes, properties and project spaces throughout Edmonton.
+            </p>
 
-            <a
-                href="contact.html"
-                class="dark-btn"
-            >
+            <div class="service-grid">
+
+                <article class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">▣</div>
+
+                    <h3>Bin Rental</h3>
+
+                    <p>
+                        Convenient bin rental solutions for home cleanouts,
+                        renovations and project debris.
+                    </p>
+
+                    <a href="bin-rental.html" class="service-link">
+                        EXPLORE BIN RENTAL →
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">✦</div>
+
+                    <h3>Cleaning Services</h3>
+
+                    <p>
+                        Professional cleaning support for homes,
+                        properties and project spaces.
+                    </p>
+
+                    <a href="cleaning-services.html" class="service-link">
+                        EXPLORE CLEANING →
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">↗</div>
+
+                    <h3>Junk Removal</h3>
+
+                    <p>
+                        Clear unwanted materials, general clutter and property waste
+                        with practical junk removal services.
+                    </p>
+
+                    <a href="junk-removal.html" class="service-link">
+                        EXPLORE JUNK REMOVAL →
+                    </a>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+
+            <div class="section-label">HOW IT WORKS</div>
+
+            <h2 class="section-title">
+                THREE SIMPLE STEPS TO A CLEANER SPACE.
+            </h2>
+
+            <div class="process-grid">
+
+                <article class="process-step">
+                    <div class="step-number">01</div>
+
+                    <h3>Tell Us About Your Project</h3>
+
+                    <p>
+                        Contact ABC Bin Rental and share details about your cleanup
+                        or waste management needs.
+                    </p>
+                </article>
+
+                <article class="process-step">
+                    <div class="step-number">02</div>
+
+                    <h3>Choose Your Service</h3>
+
+                    <p>
+                        Select bin rental, cleaning or junk removal based on your
+                        project requirements.
+                    </p>
+                </article>
+
+                <article class="process-step">
+                    <div class="step-number">03</div>
+
+                    <h3>Schedule Your Cleanup</h3>
+
+                    <p>
+                        Choose a suitable service schedule and move your Edmonton
+                        project forward.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="area">
+        <div class="container area-grid">
+
+            <div class="area-copy">
+
+                <div class="section-label">LOCAL SERVICE</div>
+
+                <h2 class="section-title">
+                    SERVING EDMONTON, ALBERTA.
+                </h2>
+
+                <p>
+                    ABC Bin Rental provides bin rental, cleaning and junk removal services
+                    for homeowners, contractors, property owners and businesses in Edmonton.
+                </p>
+
+                <p>
+                    Tell us about your location and project needs, and we can discuss
+                    a practical cleanup solution.
+                </p>
+
+            </div>
+
+            <div class="area-card">
+                <span>OUR SERVICE AREA</span>
+
+                <h3>
+                    EDMONTON,<br>
+                    ALBERTA.
+                </h3>
+
+                <p>
+                    Local cleanup solutions for residential and project needs.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+
+            <h2>
+                READY TO START YOUR CLEANUP PROJECT?
+            </h2>
+
+            <a href="contact.html" class="btn">
                 REQUEST YOUR FREE QUOTE
             </a>
 
-        </section>
+        </div>
+    </section>
 
+</main>
 
-    </main>
+<footer class="footer">
+    <div class="container">
 
+        <div class="footer-grid">
 
+            <div>
+                <h3>ABC BIN RENTAL</h3>
 
-    <!-- FOOTER -->
+                <p>
+                    Practical bin rental, cleaning and junk removal solutions
+                    for Edmonton, Alberta.
+                </p>
+            </div>
 
+            <div>
+                <h3>Services</h3>
 
-    <div id="footer-placeholder"></div>
+                <a href="bin-rental.html">Bin Rental</a>
+                <a href="cleaning-services.html">Cleaning Services</a>
+                <a href="junk-removal.html">Junk Removal</a>
+            </div>
 
+            <div>
+                <h3>Company</h3>
 
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
 
-    <!-- JAVASCRIPT -->
+        </div>
 
+        <div class="footer-bottom">
+            © 2026 ABC Bin Rental. Edmonton, Alberta.
+        </div>
 
-<script src="./script.js?v=2"></script>
+    </div>
+</footer>
 
 </body>
-
 </html>
